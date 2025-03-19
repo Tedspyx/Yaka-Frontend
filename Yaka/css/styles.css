@@ -1,0 +1,1371 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;  
+    overflow-x: hidden;  
+}
+
+a{
+    text-decoration: none;
+}
+
+/*********************************header section*********************************************/
+header{
+    width: 100%;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    background-color: #000;
+    justify-content: flex-end;
+}
+
+header img {
+    margin-right: auto; 
+    height: 100%; 
+    align-items: center;
+}
+
+/* header nav a{
+    background-color: #000;
+    color: white;
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    transition: 0.2s;
+    font-weight: 500;
+    
+
+}
+
+header nav a.active, header nav a:hover{
+    background: #A85385;
+    border-radius: 2px;
+} */
+
+/* Barra de navegacion  */
+nav {
+    &.navigation {
+      margin: 0 auto;
+      display: block; 
+      text-align: center;
+      font-size: 16px;
+  
+      ul li {
+        list-style: none;
+        margin: 0 auto;
+        border-left: 2px solid #701F5D;
+        display: inline-block;
+        padding: 0 30px;
+        position: relative;
+        text-decoration: none;
+        text-align: center;
+        font-family: arvo;
+      }
+  
+      li a {
+        color: white;
+      }
+  
+      li a:hover {
+        color: #701F5D;
+      }
+  
+      li:hover {
+        cursor: pointer;
+      }
+  
+      ul li ul {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        padding-left: 0;
+        left: 0;
+        display: none;
+        background: white;
+      }
+  
+      ul li:hover > ul,
+      ul li ul:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        min-width: 250px;
+        text-align: left;
+        padding-top: 20px;
+        box-shadow: 0px 3px 5px -1px #ccc;
+      }
+  
+      ul li ul li {
+        clear: both;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+        border-style: none;
+      }
+  
+      ul li ul li a:hover {
+        padding-left: 10px;
+        border-left: 2px solid #701F5D;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  
+  a {
+  
+      text-decoration: none;
+  
+      &:hover {
+          color: #701F5D;
+      }
+   
+  }
+
+/********************************* Inicio *********************************************/
+
+.deslizador {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin-top: -50px;
+}
+
+.deslizador .lista .elemento {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+
+.deslizador .lista .elemento img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.deslizador .lista .elemento::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 95%; 
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+    z-index: 1;
+    pointer-events: none; 
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Contenido......................*/
+
+
+.contenidos .contenido {
+    position: absolute;
+    top: 30%;
+    left: -10%; 
+    width: 100%;
+    transform: translateX(-55%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+    z-index: 2;  
+    opacity: 0;
+    pointer-events: none; /* Bloquea la interacción con los ocultos */
+    transform: translateX(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.contenidos .contenido.activo {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all; /* Habilita la interacción solo en el activo */
+}
+
+/* Estilos del título */
+.contenidos .contenido .titulo {
+    font-size: 6em;
+    line-height: 1.3em;
+    font-family: "Rye", serif;
+    text-align: center; 
+}
+
+
+/* Asegurar que el botón tenga los estilos base */
+.contenidos .contenido .button button {
+    border: none ;
+    background-color: #D4AF37 ;
+    color: white ;
+    font-family: 'Poppins', sans-serif ;
+    font-weight: 500 ;
+    font-size: 16px ;
+    padding: 10px 20px ;
+    cursor: pointer ;
+    transition: all 0.3s ease-in-out ;
+    letter-spacing: 2px ;
+    border-radius: 9px ;
+    display: inline-block ;
+}
+
+/* Hover con animación */
+.contenidos .contenido .button button:hover {
+    background-color: #B8962E ; 
+    transform: scale(1.1) ; 
+    box-shadow: 0px 4px 15px rgba(212, 175, 55, 0.5) ; /* Sombra dorada */
+}
+
+/* Asegurar que el botón no esté oculto */
+.contenidos .contenido .button {
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    width: 100% ;
+    margin-top: 20px ;
+}
+
+
+
+
+
+
+
+/* miniatura Section  */
+
+
+.miniatura {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+    align-items: flex-end; 
+
+}
+
+.miniatura .elemento{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.miniatura .elemento img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.miniatura .elemento:first-child {
+    width: 20vw; 
+    height: 60vh; 
+    border: 6px solid white; 
+    border-radius: 20px; 
+}
+
+
+
+/*flechaCambiadora section*/
+
+.flechaCambiadora{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.flechaCambiadora button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #A85385;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.flechaCambiadora button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+
+/* Animation Part */
+
+.deslizador .lista .elemento:nth-child(1){
+    z-index: 1;
+}
+
+/* animation text in first item */
+
+.deslizador .lista .elemento:nth-child(1) .contenido .titulo,
+.deslizador .lista .elemento:nth-child(1) .contenido .button
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.deslizador .lista .elemento:nth-child(1) .contenido .titulo{
+    animation-delay: 0.4s !important;
+}
+
+.deslizador .lista .elemento:nth-child(1) .contenido .button{
+    animation-delay: 1s !important;
+}
+
+
+/* Animacion boton derecha*/
+.deslizador.derecha .lista .elemento:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.deslizador.derecha .miniatura .elemento:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+
+.deslizador.izquierda .lista .elemento img{
+    z-index: 100;
+}
+
+
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+
+
+.deslizador.derecha .miniatura{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+
+/* Animacion boton izquierda*/
+.deslizador.izquierda .lista .elemento:nth-child(2){
+    z-index: 2;
+}
+
+.deslizador.izquierda .lista .elemento:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+.deslizador.izquierda .miniatura .elemento:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.deslizador.derecha .flechaCambiadora button,
+.deslizador.izquierda .flechaCambiadora button{
+    pointer-events: none;
+}
+
+
+.deslizador.izquierda .lista .elemento:nth-child(2) .contenido .title,
+.deslizador.izquierda .lista .elemento:nth-child(2) .contenido .button
+{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+
+.indicador {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.punto {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.punto.activo {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+/*Quienes somos apartado*/
+
+
+.quienes_somos{
+    background-color: #000;
+    padding: 40px 20px;
+    
+    
+}
+
+.quienes_somos_content {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: center;
+    gap: 80px; 
+    
+}
+
+.quienes_somos_parrafo {
+    max-width: 700px;
+    max-height:700px ;
+    flex: 1; 
+    min-width: 250px; 
+    padding-left: 10px;
+    color: #eee;
+}
+
+.quienes_somos_img {
+    max-width: 450px;
+    max-height:450px ;
+    flex: 1;
+    text-align: center;
+}
+
+.quienes_somos_img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.quienes_somos_titulo {
+    font-size: 6em;
+    font-family: "Rye", serif;
+    text-align: center;
+    margin-bottom: 95px;
+    margin-top: 65px;
+    color: #fff;  
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+
+
+.quienes_somos_parrafo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
+ 
+
+
+.quienes_somos_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+
+.quienes_somos_button button {
+    border: none;
+    background-color: #D4AF37;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.4s;
+    letter-spacing: 2px;
+    border-radius: 9px;
+}
+
+.quienes_somos_button button:hover {
+    background-color: #B8962E ;
+    transform: scale(1.1) ;
+    box-shadow: 0px 4px 15px rgba(212, 175, 55, 0.5) ;
+}
+
+/*MARIDAJES DE INICIO*/
+
+
+
+.maridajes {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    padding: 120px 40px;
+    background-color:#A85385;
+}
+
+.maridajes_titulo {
+    font-size: 6em;
+    font-family: "Rye", serif;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;  
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+
+.maridajes_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+
+.maridajes_button button {
+    border: none;
+    background-color: #D4AF37;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.4s;
+    letter-spacing: 2px;
+    border-radius: 9px;
+}
+
+.maridajes_button button:hover {
+    background-color: #B8962E ;
+    transform: scale(1.1) ;
+    box-shadow: 0px 4px 15px rgba(212, 175, 55, 0.5) ;
+}
+
+
+.maridajes_img {
+    max-width: 550px;
+    max-height: 550px ;
+    flex: 1;
+    text-align: center;
+}
+
+.maridajes_img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+
+
+
+
+
+
+.primer-elementor {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #A85385;
+}
+
+.primer-elementor svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    fill: black; /* Cambia este color según lo necesites */   
+
+}
+
+.segundo-elementor {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #2E5234;
+}
+
+.segundo-elementor svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    fill:  #A85385; /* Cambia este color según lo necesites */   
+
+}
+
+
+
+/*sostenibilidad*/
+
+.sostenibilidad{
+    background-color: #2E5234;
+}
+
+
+.sostenibilidad-titulo {
+    font-size: 6em;
+    font-family: "Rye", serif;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;  
+    box-sizing: border-box;
+    font-weight: normal;
+
+}
+
+
+.gallery-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 300px;
+    padding: 20px;
+    grid-gap: 20px;
+    width: 65%; 
+    margin: 0 auto;
+    
+
+
+}
+
+
+
+.gallery-item{
+    position: relative;
+}
+
+.gallery-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gallery-title{
+    position: absolute;
+    bottom: 4rem;
+    left: 0;
+    right: 0;   
+    margin: auto;
+    
+    text-align: center;
+    font-family: "Poppins Bold";
+    font-size: 2.2rem;
+    color:#fff;
+    line-height: 2.6rem;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.9);
+    -webkit-text-stroke: 0.5px black;
+
+}
+
+
+.sostenibilidad-parrafo{
+    max-width: 65%;
+    max-height: 25%;
+    flex: 1; 
+    min-width: 250px; 
+    padding-left: 10px;
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+
+}
+
+.sostenibilidad-parrafo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.gallery-item:nth-child(1) {
+    grid-row-start: span 2; 
+
+}
+
+
+.sostenibilidad_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    background-color: #2E5234;
+   
+    
+    
+    
+    
+}
+
+.sostenibilidad_button button {
+    border: none;
+    background-color: #D4AF37;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.4s;
+    letter-spacing: 2px;
+    border-radius: 9px;
+    
+}
+
+.sostenibilidad_button button:hover {
+    background-color: #B8962E ;
+    transform: scale(1.1) ;
+    box-shadow: 0px 4px 15px rgba(212, 175, 55, 0.5) ;
+}
+
+
+
+/*********************************Nuestras Cervezas*********************************************/
+
+.marquesina{
+    width: 100%;
+    overflow: hidden;
+    background-color: #A85385;
+    color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    .mensajes{
+        display: flex;
+        animation: desplazar 40s linear infinite;
+    }
+    .mensaje{
+        flex: none;
+        padding: 0 24%;
+        white-space: nowrap;
+        color: white;
+        font-size: 1.2em;
+        font-weight: 800;
+    }
+  }
+  @keyframes desplazar {
+    0% {
+        transform: translateX(-30%);
+    }
+    10% {
+        transform: translateX(70%);
+    }
+    55%{
+        transform: translateX(-90%);
+    }
+    70% {
+        transform: translateX(10%);
+    }
+    80% {
+        transform: translateX(-90%);
+    }
+    
+    
+  }
+
+.Contenedor-fondo{
+  background-image: url(../img/cervezasTodas.jpg);
+	padding: 360px 100px;
+	text-align: center;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+
+}
+
+.Contenedor-fondo:before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.453);
+}
+
+.Contenedor-fondo h1{
+    font-family: 'RYE', sans-serif;
+    font-size: 70px;
+	color: #fff;
+	position: absolute;
+    top: 30%;
+    left: 53%;
+    transform: translate(-50%, -50%); /* Centra el texto */
+    line-height: 1.2; /*para que no se vea tan pegado al borde*/
+    z-index: 2; /*para que se vea por encima del fondo*/
+
+}
+
+.Contenedor-fondo h2{
+    display: block; 
+    font-size: 65px; 
+    font-family: 'RYE', sans-serif;
+    color: #fff;
+    position: absolute;
+    top: 40%;
+    left: 53%;
+    transform: translate(-50%, -50%); /* Centra el texto */
+    z-index: 2;
+    
+}
+
+.cervezas{
+    background: linear-gradient(60deg,#A85385,#422134);
+}
+
+.Tipos_cervezas {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px;
+
+  }
+  
+  .Tipos_cervezas article {
+    
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    gap: 20px;                      
+    align-items: center;             
+    margin: 40px 0;      
+    color: white;            
+  }
+
+  .Tipos_cervezas article .imagenes {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 2%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+
+ .Tipos_cervezas article .imagenes img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+ }
+
+  .Tipos_cervezas article .imagenes:hover img {
+    transform: translateX(-500px);
+  }
+
+  .Tipos_cervezas article p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 1em;
+    margin-right: 7em;
+  }
+/*********************************Quienes somos*********************************************/
+/*********************************Maridajes*********************************************/
+
+  
+
+  
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #582b12, #000);
+      color: white;
+  }
+  
+  header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1A050D;
+      padding: 10px 20px;
+  }
+  
+  nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+  }
+  
+  .active {
+      color: #d14d72;
+  }
+  
+  section {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+  }
+  
+  article {
+      position: relative;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+  }
+  
+  article img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #ddd;
+      margin-right: 20px;
+  }
+  
+  footer {
+      background: #5a2151;
+      padding: 20px;
+      text-align: center;
+  }
+  
+  .contacto, .redes {
+      margin-top: 10px;
+  }
+/*********************************Sostenibilidad*********************************************/
+/*********************************Contacto*********************************************/
+
+/* CONTACTO */
+
+.is-valid {
+    background-color: #ffd1dc !important; /* el important es para romper la especifidad de una etiqueta */
+    border-bottom: 2px solid #1eb400 !important;
+  }
+  .is-invalid {
+    border-bottom: 5px solid #f81818 !important;
+  }
+  .image-container {
+      background: url("../img/cervezaOriginal.webp") center/cover no-repeat;
+      width: 100%;
+      height: 100vh;
+    }
+    
+    /* Título contactanos */
+    .titulo-contacto {
+      text-align: center;
+      font-family: 'RYE', sans-serif;
+      font-size: 4rem;
+      color: #fff;
+      margin-top: -100px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Contenido formulario */
+    .form-section {
+      padding: 50px 0;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    form fieldset {
+      border: none;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    form fieldset label {
+      margin: 15px 0 5px;
+      font-weight: bold;
+      color: #333;
+      text-transform: uppercase;
+    }
+    
+    form fieldset input,
+    form fieldset textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      background-color: #fff;
+      color: #333;
+    }
+    
+    form fieldset input::placeholder,
+    form fieldset textarea::placeholder {
+      color: #aaa;
+    }
+    
+    form fieldset button {
+      margin-top: 20px;
+      background-color: #D4A017;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      padding: 12px 0;
+      cursor: pointer;
+    }
+    
+    form fieldset button:hover {
+      background-color: #b78f15;
+    }
+  
+/*********************************Footer*********************************************/
+
+
+footer {
+    font-family: sans-serif;
+    color: #fff;            
+    background-color: #000000; /* Negro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Sombra elegante */
+  }
+ 
+  /* ----- Barra superior (contacto) ----- */
+  .footer-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #1A050D; /* Verde oscuro */
+    border-bottom: 3px solid #1A050D; /* Borde dorado */
+  }
+ 
+  .footer-top .contact-item {
+    text-align: center;
+    max-width: 200px;
+  }
+  .footer-top h3 {
+    margin: 10px 0 5px;
+    color: #fff;
+  }
+  .footer-top p {
+    margin: 0;
+    color: #fff;
+  }
+ 
+  /* ----- Contenido central ----- */
+  .footer-middle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 40px 60px;
+  }
+ 
+  /* Columnas del footer */
+  .footer-col h2, .footer-col h3, .footer-col h4 {
+    color: #D4AF37; /* Dorado */
+    margin-bottom: 15px;
+    border-bottom: 2px solid #BF6F3A; /* Línea naranja elegante */
+    padding-bottom: 5px;
+  }
+  .footer-col p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .footer-col ul li a:hover {
+    color: #BF6F3A; /* Naranja cálido */
+    text-decoration: underline;
+  }
+ 
+  /* Redes sociales */
+  .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 1.4em;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: #BF6F3A; /* Naranja cálido */
+    transform: scale(1.1);
+  }
+ 
+  /* Formulario de suscripción */
+  .footer-col form {
+    display: flex;
+    margin-top: 10px;
+    border: 2px solid #D4AF37;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .footer-col form input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  .footer-col form button {
+    background-color: #D4AF37; /* Naranja cálido */
+    border: none;
+    color: #000;
+    padding: 0 16px;
+    cursor: pointer;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+  .footer-col form button:hover {
+    background-color: #BF6F3A; /* Dorado */
+  }
+ 
+  /* ----- Barra inferior (copyright) ----- */
+  .footer-bottom {
+    background-color: #1A050D; /* Dorado */
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.8);
+  }
+  .footer-bottom p {
+    margin: 0;
+    color: #fff;
+  }
+  hr{
+    border: 1px solid #BF6F3A;
+  }
+
+
+
+/*********************************Otros*********************************************/
+
+/* Modal login y registro  */
+
+.login-button {
+    background-color: #701F5D;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: arvo;
+    font-size: 16px;
+  }
+  
+  .login-button:hover {
+    background-color: #B76FA8;
+  }
+  
+  /* Estilos para el modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background: linear-gradient(to bottom right, #701F5D, #B76FA8);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+    animation: modalopen 0.4s;
+  }
+  
+  @keyframes modalopen {
+    from {opacity: 0; transform: translateY(-60px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .modal-content h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .login-submit {
+    width: 100%;
+    background-color: #701F5D;
+    color: white;
+    padding: 14px 20px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-submit:hover {
+    background-color: #5a1a4d;
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .register-link a {
+    color: #e0e0e0;
+    text-decoration: underline;
+  }
+  
+  .register-link a:hover {
+    color: white;
+  }
+  
+  /* registro */
+  .register-container {
+    padding: 20px;
+  }
+  
+  .register-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .register-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .register-submit:hover {
+    background-color: #45a049;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .login-link a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
