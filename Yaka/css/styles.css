@@ -935,12 +935,36 @@ nav {
 .qs-quienes-somos{
   width: 100%;
   height: 100vh;
-  background-color: #A85385;
+  min-height: 100vh; 
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 4rem;
   padding: 4% 10%;
+  position: relative;
+  
 
+}
+
+.qs-quienes-somos video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100vh; 
+  object-fit: cover;
+  transform: translate(-50%, -50%) scaleX(-1); 
+  z-index: -2;
+}
+
+.qs-quienes-somos::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: -1;
 }
 
 .qs-imagen img{
@@ -988,17 +1012,19 @@ nav {
 }
 
 .qs-texto p{
-  max-width: 600px;
+  max-width: 100%;
   color: #fff;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.7;
   margin-bottom: 60px;
+  text-align: justify;
 
 }
 
 .qs-texto-final{
   display: flex;
+  justify-content: center;
 
 }
 
@@ -1022,20 +1048,19 @@ nav {
 
 }
 
+
+
+
 @media(max-width:1385px){
-  .qs-quienes-somos{
-    padding: 4% 4%;
+  .qs-quienes-somos{    
     transition: .3s;
   }
   .qs-imagen img{
-    width: 400px;
-    height: auto;
-    transition: .3s;
+    transition: .3s;      
   }
-
 }
 
-@media(max-width:1240px){
+@media(max-width:1240px){  
   .qs-texto h1{
     font-size: 30px;
     transition: .3s;
@@ -1046,21 +1071,49 @@ nav {
   .qs-quienes-somos{
     grid-template-columns: 1fr;
     height: 100%;
+    text-align: center;
+    padding: 10% 5%;
 
   }
   .qs-imagen img{
-    padding-top: 40px;
+    padding-top: 0px;
+  }
+
+  .qs-quienes-somos video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .qs-quienes-somos video {
+    height: 180vh; 
+  }
+  .qs-quienes-somos::before{
+    height: 180vh;
   }
 
 }
 
+@media (max-width: 768px) {
+  .qs-quienes-somos {
+    flex-direction: column;
+    text-align: center;
+    padding: 10% 5%;
+    
+    
+  }
 
+  .qs-quienes-somos video {
+    height: 180vh; 
+  }
 
-
-
-
-
-
+  .qs-imagen img{
+    padding-top: 0px;
+  }
+  .qs-quienes-somos::before{
+    height: 180vh;
+  }
+} 
 
 
 
@@ -1115,6 +1168,8 @@ nav {
       border-radius: 15px;
       display: flex;
       align-items: center;
+      flex-direction: column;
+      text-align: justify;
   }
   
   article img {
@@ -1233,6 +1288,7 @@ footer {
     color: #fff;            
     background-color: #000000; /* Negro */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Sombra elegante */
+    
   }
  
   /* ----- Barra superior (contacto) ----- */
