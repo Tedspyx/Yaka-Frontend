@@ -35,23 +35,6 @@ header img {
     align-items: center;
 }
 
-/* header nav a{
-    background-color: #000;
-    color: white;
-    margin-right: 5px;
-    padding: 5px 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    transition: 0.2s;
-    font-weight: 500;
-    
-
-}
-
-header nav a.active, header nav a:hover{
-    background: #A85385;
-    border-radius: 2px;
-} */
 
 /* Barra de navegacion  */
 nav {
@@ -129,7 +112,7 @@ nav {
       &:hover {
           color: #701F5D;
       }
-   
+
   }
 
 /********************************* Inicio *********************************************/
@@ -580,6 +563,7 @@ nav {
 
 
 
+
 .maridajes {
     position: relative;
     display: flex;
@@ -670,6 +654,8 @@ nav {
     overflow: hidden;
     background-color: #2E5234;
 }
+
+
 
 .segundo-elementor svg {
     width: 100%;
@@ -774,9 +760,7 @@ nav {
     align-items: center;
     margin-top: 20px;
     padding-bottom: 30px;
-    background-color: #2E5234;
-   
-    
+    background-color: #2E5234;  
     
     
     
@@ -945,6 +929,147 @@ nav {
     margin-right: 7em;
   }
 /*********************************Quienes somos*********************************************/
+
+
+
+.qs-quienes-somos{
+  width: 100%;
+  height: 100vh;
+  background-color: #A85385;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 4rem;
+  padding: 4% 10%;
+
+}
+
+.qs-imagen img{
+  max-width: 100%;
+  width: 560px;
+  height: auto;
+  border-radius: 20px;
+
+}
+
+.qs-texto{
+  padding: 6% 0;
+
+}
+
+.qs-texto h4{
+  color: #D4AF37;
+  font-size: 6em;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-family: "Rye", serif;
+
+}
+
+
+
+.qs-texto h1{
+  color: #fff;
+  font-size: 36px;
+  text-transform: capitalize;
+  font-weight: 700;
+  line-height: 46px;
+  margin-bottom: 30px;
+
+}
+
+.qs-texto hr{
+  width: 40%;
+  border: none;
+  height: 4px;
+  background-color: #D4AF37;
+  margin-bottom: 50px;
+
+}
+
+.qs-texto p{
+  max-width: 600px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 60px;
+
+}
+
+.qs-texto-final{
+  display: flex;
+
+}
+
+.qs-texto1{
+  margin-right: 60px;
+
+}
+
+.qs-texto-final h3{
+  color: #D4AF37;
+  font-size: 60px;
+  font-weight: 700;
+
+}
+
+.qs-texto-final h5{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+
+}
+
+@media(max-width:1385px){
+  .qs-quienes-somos{
+    padding: 4% 4%;
+    transition: .3s;
+  }
+  .qs-imagen img{
+    width: 400px;
+    height: auto;
+    transition: .3s;
+  }
+
+}
+
+@media(max-width:1240px){
+  .qs-texto h1{
+    font-size: 30px;
+    transition: .3s;
+  }
+}
+
+@media(max-width:1040px){
+  .qs-quienes-somos{
+    grid-template-columns: 1fr;
+    height: 100%;
+
+  }
+  .qs-imagen img{
+    padding-top: 40px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*********************************Maridajes*********************************************/
 
   
