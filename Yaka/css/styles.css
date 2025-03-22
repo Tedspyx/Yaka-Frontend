@@ -1179,6 +1179,11 @@ nav {
 
 }
 
+.qs-texto2{
+  margin-right: 60px;
+
+}
+
 .qs-texto-final h3{
   color: #D4AF37;
   font-size: 60px;
@@ -1247,6 +1252,7 @@ nav {
     padding: 10% 5%;
     
     
+    
   }
 
   .qs-quienes-somos video {
@@ -1255,9 +1261,32 @@ nav {
 
   .qs-imagen img{
     padding-top: 0px;
+    max-width: 350px;
+    align-items: center;
+  }
+  .qs-imagen{
+    align-items: center;
   }
   .qs-quienes-somos::before{
     height: 180vh;
+  }
+
+  .quienes_somos_titulo{
+    max-width: 90%;
+  }
+
+  .qs-texto-final h3{
+    
+    font-size: 45px;
+    
+  
+  }
+  
+  .qs-texto-final h5{
+    
+    font-size: 12px;
+    
+  
   }
 } 
 
