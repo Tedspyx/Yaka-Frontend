@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loginBtn.onclick = function() {
         loginModal.style.display = "block";
     }
+    
     // Para abrir registro desde login
     registerLink.onclick = function(e) {
         e.preventDefault();
@@ -93,19 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             registerModal.style.display = 'none';
         });
     }
-    
-    // Switch to login modal when clicking on the login link
-    if (loginLink) {
-        loginLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            registerModal.style.display = 'none';
-            // Assuming you have a login modal with id 'login-modal'
-            const loginModal = document.getElementById('login-modal');
-            if (loginModal) {
-                loginModal.style.display = 'block';
-            }
-        });
-    }
+
     // Para cerrar cuando se da click afuera
     window.onclick = function(event) {
         if (event.target == loginModal) {
