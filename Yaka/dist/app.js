@@ -32,7 +32,7 @@ loginLink.onclick = function(e) {
     loginModal.style.display = "block";
 }
 
-// Cuando se da click en el span (x)
+// 
 closeLoginBtn.onclick = function() {
     loginModal.style.display = "none";
 }
