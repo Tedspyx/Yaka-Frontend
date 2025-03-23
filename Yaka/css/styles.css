@@ -115,6 +115,128 @@ nav {
 
   }
 
+
+  /************************MIGA DE PAN**********************************************/
+
+
+  .miga {
+    position: absolute; 
+    background: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    z-index: 100; 
+    padding: 5px 10px; 
+    justify-content: flex-start;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.miga ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.miga li {
+    display: flex;
+    align-items: center;
+    color: #fff; 
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.miga li:not(:last-child)::after {
+    content: ">"; 
+    margin: 0 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+}
+
+.miga a {
+    text-decoration: none;
+    color: #A85385; 
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.miga a:hover {
+    color: white; 
+}
+
+.miga i {
+    font-size: 14px;
+}
+
+/* 
+
+  
+@media (max-width: 768px) {
+  .miga {
+      padding: 3px 5px;
+  }
+
+  .miga ul {
+      justify-content: space-around; 
+  }
+
+  .miga li {
+      font-size: 12px; 
+      padding: 0px 0px;
+  }
+
+  .miga a {
+      font-size: 12px; 
+      
+  }
+
+  .miga i {
+      font-size: 12px; 
+  }
+}
+
+
+@media (max-width: 646px) {
+  .miga {
+      padding: 0px 0px;
+      
+      
+  }
+
+  .miga ul {
+      justify-content: space-between; 
+      
+  }
+
+  .miga li {
+      font-size: 7px;
+      padding: 0px 0px;
+      
+  }
+
+  .miga a {
+      font-size: 8px;
+      gap: 1px
+      
+  }
+
+  .miga i {
+      font-size: 8px;
+      
+  }
+}
+ */
+
+
+
+
+
+
 /********************************* Inicio *********************************************/
 
 .deslizador {
@@ -933,6 +1055,108 @@ nav {
     grid-template-columns: 1fr;
   }
 }
+
+
+/*********************************Verificacion de la edad*********************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.age-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('/Yaka/img/fondoVerificacion.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.age-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+.logo-verificacion {
+  width: 250px; 
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.age-popup {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.8);
+  font-family: 'Poppins', sans-serif;
+  width: 320px;
+  position: relative;
+  z-index: 2;
+}
+
+.age-popup h2 {
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.age-popup p {
+  color: #444;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+/* Contenedor de los botones */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Estilo general de los botones */
+.age-popup button {
+  padding: 12px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Botón "Sí" */
+.age-popup button:first-child {
+  background: #2E5234;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(36, 186, 46, 0.6);
+}
+
+.age-popup button:first-child:hover {
+  background: #489248;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 15px rgba(83, 170, 91, 0.5);
+}
+
+/* Botón "No" */
+.age-popup button:last-child {
+  background: #A85385;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(255, 77, 77, 0.6);
+}
+
+.age-popup button:last-child:hover {
+  background: #c75b9a;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 15px rgba(141, 83, 170, 0.5);
+}
+
+
 
 
 /*********************************Nuestras Cervezas*********************************************/
