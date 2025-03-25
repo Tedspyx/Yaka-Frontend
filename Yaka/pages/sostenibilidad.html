@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+  <section class="marquesina">
+    <div class="mensajes">
+      <div class="mensaje">¡Descubre el sabor del Amazonas en cada sorbo! 🌿🍺</div>
+        <div class="mensaje">Envío gratis por compras superiores a $150.000</div>
+        <div class="mensaje">Cerveza artesanal con esencia de açaí y araza. ¡Pruébala ahora! 🍹✨</div>    
+    </div>
+  </section>
   <header>
     <img src="../img/logo.png" alt="Logo de yaka">
     <nav role="navigation" class="navigation">
         <ul>
             <li><a href="../index.html" class="active">Inicio</a></li>
-            <li><a href="./Nuestras_cervezas.html">Nuestras Cervezas</a></li>
-            <li><a href="./Quienes_somos.html">Quienes Somos</a></li>
+            <li><a href="./nuestras-cervezas.html">Nuestras Cervezas</a></li>
+            <li><a href="./quienes-somos.html">Quienes Somos</a></li>
             <li><a href="./maridajes.html">Maridajes</a></li>
             <li><a href="sostenibilidad.html">Sostenibilidad</a></li>
             <li><a href="./contacto.html">Contacto</a></li>
@@ -22,16 +29,48 @@
     </nav>
 </header>
     
-    <main>
-        <section class="sostenibilidad">
-            <article class="texto">
-                <p>Lorem ipsum dolor sit amet consectetur. Sed elementum rhoncus fames leo donec fames. 
-                Donec ipsum velit at tellus in sed duis hac etiam. Metus id vivamus amet massa scelerisque nam diam quis. 
-                Aenean ultrices massa sed parturient odio. Nulla dui in accumsan at cum tempor platea ultricies aliquet. 
-                Fringilla phasellus varius mauris tellus id. Tristique ac quis tincidunt porttitor feugiat eget. Donec.</p>
-            </article>
+    <main class="main_sostenibilidad">
+        <section class="sostenibilidad_fondo">
+            <video class="video_fondo" loop="loop" autoplay="autoplay">
+                <source src="../assets/videos/Video_sostenibilidad2.mp4" type="video/mp4">
+            </video>    
+        </section>
+        
+        <section class="sostenibilidad_section">
+          <ul class="projects-section__projects">
+              <li class="projects-section__project projects-section__project--brasil">
+                  <img src="../img/yaka_corales.png" alt="Brasil">
+                  <div class="card-content">
+                      <p>Los proyectos de plantaciones en Brasil protegen a miles de plantas y animales en peligro.</p>
+                      <button class="btn">Ficha del país</button>
+                  </div>
+              </li>
+  
+              <li class="projects-section__project projects-section__project--senegal">
+                  <img src="../img/EmpaqueCircular.png" alt="Senegal">
+                  <div class="card-content">
+                      <p>Las plantaciones de árboles en Senegal ayudan a restaurar la tierra desertificada y a devolverle su fertilidad.</p>
+                      <button class="btn">Ficha del país</button>
+                  </div>
+              </li>
+  
+              <li class="projects-section__project projects-section__project--indonesia">
+                  <img src="../img/AgriculturaInteligente.png" alt="Indonesia">
+                  <div class="card-content">
+                      <p>En Indonesia, ayudamos a restaurar bosques en antiguas plantaciones de aceite de palma mientras creamos formas de ingresos alternativas.</p>
+                      <button class="btn">Ficha del país</button>
+                  </div>
+              </li>
+          </ul>
+      </section>
+            <!-- <article class="wave-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#2E5234" fill-opacity="1" d="M0,160L21.8,149.3C43.6,139,87,117,131,117.3C174.5,117,218,139,262,138.7C305.5,139,349,117,393,128C436.4,139,480,181,524,208C567.3,235,611,245,655,245.3C698.2,245,742,235,785,218.7C829.1,203,873,181,916,197.3C960,213,1004,267,1047,266.7C1090.9,267,1135,213,1178,165.3C1221.8,117,1265,75,1309,69.3C1352.7,64,1396,96,1418,112L1440,128L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z">
+                </path>
+              </svg>
+          </article> -->
 
-            <figure class="imagen img-derecha">
+            <!-- <figure class="imagen img-derecha">
                 <img src="../img/imagen1.jpg" alt="Descripción de la imagen 1">
                 <figcaption>Texto descriptivo sobre la imagen.</figcaption>
             </figure>
@@ -47,8 +86,8 @@
                 Aenean ultrices massa sed parturient odio. Nulla dui in accumsan at cum tempor platea ultricies aliquet. 
                 Fringilla phasellus varius mauris tellus id. Tristique ac quis tincidunt porttitor feugiat eget. Donec.</p>
             </article>
-        </section>
-    </main>
+        </section>-->
+      </main> 
     <footer>
         <div class="footer-top">
           <div class="contact-item">
@@ -77,9 +116,9 @@
             </p>
             <h4>Follow us</h4>
             <div class="social-links">
-              <a href="#"><i class="icon-facebook"></i></a>
-              <a href="#"><i class="icon-twitter"></i></a>
-              <a href="#"><i class="icon-google"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f fa-lg" style="color: #fff;"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram fa-lg" style="color: #fff;"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter fa-lg" style="color: #fff;"></i></a>
             </div>
           </div>
       
@@ -112,5 +151,7 @@
           </p>
         </div>
       </footer>
+
+      <script src="https://kit.fontawesome.com/74662a5f03.js" crossorigin="anonymous"></script>
 </body>
 </html>
