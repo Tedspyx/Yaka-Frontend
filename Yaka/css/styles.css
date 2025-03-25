@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/*
+Colores del sitio web
+#701F5D
+#1A050D
+#A85385
+#D4AF37
+#2E5234
+#BF6F3A
+#000000
+#FFFFFF
+ 
+*/
 
 *{
     margin: 0;
@@ -1162,45 +1174,38 @@ nav {
 /*********************************Nuestras Cervezas*********************************************/
 
 .marquesina{
-    width: 100%;
-    overflow: hidden;
-    background-color: #A85385;
-    color: white;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    .mensajes{
-        display: flex;
-        animation: desplazar 40s linear infinite;
-    }
-    .mensaje{
-        flex: none;
-        padding: 0 24%;
-        white-space: nowrap;
-        color: white;
-        font-size: 1.2em;
-        font-weight: 800;
-    }
+  width: 100%;
+  overflow: hidden;
+  background-color: #A85385;
+  color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  .mensajes{
+      display: flex;
+      animation: desplazar 40s linear infinite;
   }
-  @keyframes desplazar {
-    0% {
-        transform: translateX(-30%);
-    }
-    10% {
-        transform: translateX(70%);
-    }
-    55%{
-        transform: translateX(-90%);
-    }
-    70% {
-        transform: translateX(10%);
-    }
-    80% {
-        transform: translateX(-90%);
-    }
-    
-    
+  .mensaje{
+      flex: none;
+      padding: 0 24%;
+      white-space: nowrap;
+      color: white;
+      font-size: 1.2em;
+      font-weight: 800;
   }
+}
+@keyframes desplazar {
+  0% {
+      transform: translateX(-10%);
+  }
+  10% {
+      transform: translateX(70%);
+  }
+  55%{
+      transform: translateX(-140%);
+  }
+  
+}
 
 .Contenedor-fondo{
   background-image: url(../img/cervezasTodas.jpg);
@@ -1260,7 +1265,14 @@ nav {
 
   }
   
-  .Tipos_cervezas article {
+  .Tipos_cervezas {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px;
+
+  }
+  
+  .Tipos_cervezas .cervecita {
     
     display: grid;
     grid-template-columns: 1fr 500px;
@@ -1270,7 +1282,7 @@ nav {
     color: white;            
   }
 
-  .Tipos_cervezas article .imagenes {
+  .Tipos_cervezas .cervecita .imagenes {
     width: 500px;
     height: 500px;
     display: flex;
@@ -1281,22 +1293,51 @@ nav {
 }
 
 
- .Tipos_cervezas article .imagenes img {
+ .Tipos_cervezas .cervecita .imagenes img {
     width: 500px;
     height: 500px;
     object-fit: cover;
     transition: transform 0.5s ease;
  }
 
-  .Tipos_cervezas article .imagenes:hover img {
+  .Tipos_cervezas .cervecita .imagenes:hover img {
     transform: translateX(-500px);
   }
-
-  .Tipos_cervezas article p {
+  .Tipos_cervezas .cervecita .cervecita_parrafo {
     font-size: 1.1rem;
     line-height: 1.4;
-    margin-bottom: 1em;
-    margin-right: 7em;
+    transform: translate(5%, -100%); /* Centra el texto */
+    margin-right: 5em;
+    margin-left: 5em;
+    text-align: justify;
+  }
+
+  
+  .Tipos_cervezas .cervecita .parrafo_araza{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    transform: translate(0.5%, -100%); /* Centra el texto */
+    margin-left: 15em;
+    text-align: justify;
+    grid-column: 2/3;
+  }
+
+
+
+  .Tipos_cervezas .cervecita .subtitle_cervezas{
+    font-size: 2.5rem;
+    margin-bottom: 6em;
+    font-family: "Rye", serif;
+    text-align: center;
+    margin-top: 3em;
+  }
+
+  .Tipos_cervezas .cervecita .subtitle_araza  {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4em;
+    transform: translate(-5%, -100%); /* Centra el texto */
+    font-family: "Rye", serif;
   }
 /*********************************Quienes somos*********************************************/
 
@@ -1556,7 +1597,7 @@ nav {
   
   section {
         width: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        /* background: rgba(0, 0, 0, 0.5); */
         padding: 20px;
   }
   
@@ -1589,6 +1630,102 @@ nav {
       margin-top: 10px;
   }
 /*********************************Sostenibilidad*********************************************/
+
+.main_sostenibilidad{
+  background-color: #2E5234;
+}
+
+.sostenibilidad_fondo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.sostenibilidad_fondo .video_fondo{
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+  
+}
+
+.projects-section__projects {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.projects-section__projects {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.projects-section__project {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 450px;
+  height: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-section__project img {
+  width: 100%;   
+  height: 50%;   
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333; 
+  font-weight: bold;
+  background-color: #D4A017;
+  height: 50%; 
+  padding: 20px;
+  box-sizing: border-box; 
+}
+
+.card-content p {
+  text-align: justify;
+  margin: 0;
+}
+.btn {
+  display: inline-block;
+  background-color: #8B1E3F; 
+  color: #ffffff; 
+  border: none;
+  border-radius: 9px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #5A1329; 
+  transform: scale(1.05); 
+}
+
+.btn:active {
+  background-color: #3E0D1E; 
+  transform: scale(0.98);
+}
+
+
+
 /*********************************Contacto*********************************************/
 
 /* CONTACTO */
@@ -1687,7 +1824,6 @@ footer {
     color: #fff;            
     background-color: #000000; /* Negro */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Sombra elegante */
-    
   }
  
   /* ----- Barra superior (contacto) ----- */
@@ -1804,7 +1940,6 @@ footer {
   hr{
     border: 1px solid #BF6F3A;
   }
-
 
 
 /*********************************Otros*********************************************/
@@ -1949,3 +2084,210 @@ footer {
   .login-link a:hover {
     text-decoration: underline;
   }
+
+
+
+
+  /* css para log  */
+
+  /* Estilos para el menú desplegable de perfil */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilos para el botón del carrito */
+.cart-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* Estilos para los controles de cantidad */
+.quantity-controls {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-input {
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+.quantity-btn {
+  width: 30px;
+  height: 30px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-to-cart-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilos para los modales */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Estilos para el carrito */
+.cart-items {
+  margin: 20px 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.cart-total {
+  margin: 20px 0;
+  text-align: right;
+  font-size: 18px;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.remove-item {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilos para el modal de perfil */
+.user-info {
+  margin: 20px 0;
+}
+
+.user-info p {
+  margin: 10px 0;
+}
+
+#edit-profile-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
