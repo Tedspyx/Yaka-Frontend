@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(user => {
             if(user && user.password === password){
                 // Login exitoso y guarda informacion del usuario en almacenamiento de la web
-                sessionStorage.setItem('dataUser', JSON.stringify({
+                sessionStorage.setItem('dataUser', JSON.stringify({// el set item lo que hace es guardar informacion en el almacenamiento de la web y con el stringify lo que hace es convertir el objeto almacenado en un string
                     id: user.id,
                     nombre: user.nombre,
                     apellido: user.apellido,
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             // Enviar data al servidor
-            fetch('http://localhost:8080/usuario/postUsuario', {
+            fetch('http://localhost:8080/usuario/addUsuario', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
