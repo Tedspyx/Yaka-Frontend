@@ -8,9 +8,9 @@ function confirmAge(isOfAge) {
     }
 }
 
-/* 
+
 window.onload = function() {
     if (localStorage.getItem("ageVerified") === "true") {
         document.getElementById("age-verification").style.display = "none";
     }
-} */
+}
