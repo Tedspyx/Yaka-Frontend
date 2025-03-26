@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/*
+Colores del sitio web
+#701F5D
+#1A050D
+#A85385
+#D4AF37
+#2E5234
+#BF6F3A
+#000000
+#FFFFFF
+ 
+*/
 
 *{
     margin: 0;
@@ -35,23 +47,6 @@ header img {
     align-items: center;
 }
 
-/* header nav a{
-    background-color: #000;
-    color: white;
-    margin-right: 5px;
-    padding: 5px 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    transition: 0.2s;
-    font-weight: 500;
-    
-
-}
-
-header nav a.active, header nav a:hover{
-    background: #A85385;
-    border-radius: 2px;
-} */
 
 /* Barra de navegacion  */
 nav {
@@ -129,8 +124,130 @@ nav {
       &:hover {
           color: #701F5D;
       }
-   
+
   }
+
+
+  /************************MIGA DE PAN**********************************************/
+
+
+  .miga {
+    position: absolute; 
+    background: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    z-index: 100; 
+    padding: 5px 10px; 
+    justify-content: flex-start;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.miga ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.miga li {
+    display: flex;
+    align-items: center;
+    color: #fff; 
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.miga li:not(:last-child)::after {
+    content: ">"; 
+    margin: 0 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+}
+
+.miga a {
+    text-decoration: none;
+    color: #A85385; 
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.miga a:hover {
+    color: white; 
+}
+
+.miga i {
+    font-size: 14px;
+}
+
+/* 
+
+  
+@media (max-width: 768px) {
+  .miga {
+      padding: 3px 5px;
+  }
+
+  .miga ul {
+      justify-content: space-around; 
+  }
+
+  .miga li {
+      font-size: 12px; 
+      padding: 0px 0px;
+  }
+
+  .miga a {
+      font-size: 12px; 
+      
+  }
+
+  .miga i {
+      font-size: 12px; 
+  }
+}
+
+
+@media (max-width: 646px) {
+  .miga {
+      padding: 0px 0px;
+      
+      
+  }
+
+  .miga ul {
+      justify-content: space-between; 
+      
+  }
+
+  .miga li {
+      font-size: 7px;
+      padding: 0px 0px;
+      
+  }
+
+  .miga a {
+      font-size: 8px;
+      gap: 1px
+      
+  }
+
+  .miga i {
+      font-size: 8px;
+      
+  }
+}
+ */
+
+
+
+
+
 
 /********************************* Inicio *********************************************/
 
@@ -171,22 +288,18 @@ nav {
 
 
 
-
-
-
-
-
-
-
-
 /*Contenido......................*/
+
+
+
+
 
 
 .contenidos .contenido {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: -10%; 
-    width: 100%;
+    width: 100%;    
     transform: translateX(-55%);
     padding-right: 30%;
     box-sizing: border-box;
@@ -194,15 +307,18 @@ nav {
     text-shadow: 0 5px 10px #0004;
     z-index: 2;  
     opacity: 0;
-    pointer-events: none; /* Bloquea la interacción con los ocultos */
+    pointer-events: none; 
     transform: translateX(50px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    /* word-spacing: 100vw; */
+
+    
 }
 
 .contenidos .contenido.activo {
     opacity: 1;
     transform: translateX(0);
-    pointer-events: all; /* Habilita la interacción solo en el activo */
+    pointer-events: all; 
 }
 
 /* Estilos del título */
@@ -295,8 +411,8 @@ nav {
 
 .flechaCambiadora{
     position: absolute;
-    top: 80%;
-    right: 52%;
+    top: 65%;
+    right: 61.5%;
     z-index: 100;
     width: 300px;
     max-width: 30%;
@@ -481,6 +597,95 @@ nav {
 
 
 
+@media (max-width: 973px){
+
+  .contenidos .contenido .titulo {
+    font-size: 5em;
+    line-height: 1.1em;
+}
+  
+}
+
+
+@media (max-width: 800px) {
+  .contenidos .contenido {
+      top: 15%;
+      padding: 0 10%;
+      left: 3%;
+      
+  }
+
+  .contenidos .contenido .titulo {
+      font-size: 2.5em;
+      line-height: 1.1em;
+  }
+
+  .contenidos .contenido .button button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+
+  .miniatura {
+    gap: 5px;
+    left: 30%;
+    bottom: 200px;
+    margin-bottom: 0; 
+    padding-bottom: 0; 
+    
+}
+
+.miniatura .elemento {
+    width: 80px;
+    height: 120px;
+}
+
+.miniatura .elemento:first-child {
+    width: 30vw;
+    height: 35vh;
+}
+
+.flechaCambiadora {
+  top: 40%;
+  right: 12%;
+  width: 150px;
+}
+
+.flechaCambiadora button {
+  width: 30px;
+  height: 30px;
+}
+
+.indicador {
+  bottom: 170px;
+  gap: 5px;
+  margin-bottom: 0; 
+  padding-bottom: 0; 
+}
+
+.punto {
+  width: 8px;
+  height: 8px;
+}
+
+}
+
+
+
+@media (max-width: 1240px) {
+
+.miniatura .elemento:first-child {
+    width: 20vw; 
+    height: 35vh; 
+    border: 6px solid white; 
+    border-radius: 20px; 
+}
+
+}
+
+
+
+
+
 
 
 
@@ -576,7 +781,25 @@ nav {
     box-shadow: 0px 4px 15px rgba(212, 175, 55, 0.5) ;
 }
 
+
+
+@media (max-width: 768px){
+  .quienes_somos_content{    
+    flex-direction: column-reverse;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .quienes_somos_titulo{
+    font-size: 5em;
+  }
+}
+
+
+
+
+
 /*MARIDAJES DE INICIO*/
+
 
 
 
@@ -671,6 +894,8 @@ nav {
     background-color: #2E5234;
 }
 
+
+
 .segundo-elementor svg {
     width: 100%;
     height: auto;
@@ -679,6 +904,23 @@ nav {
 
 }
 
+
+@media (max-width: 860px){
+  .maridajes{
+    flex-direction: column;
+    padding-top: 15px;
+
+  }
+  .maridajes_titulo{
+    font-size: 4em;
+  }
+}
+
+@media (max-width: 990px){
+  .maridajes_titulo{
+    font-size: 5em;
+  }
+}
 
 
 /*sostenibilidad*/
@@ -706,7 +948,7 @@ nav {
     grid-auto-rows: 300px;
     padding: 20px;
     grid-gap: 20px;
-    width: 65%; 
+    width: 80%; 
     margin: 0 auto;
     
 
@@ -745,7 +987,7 @@ nav {
 
 
 .sostenibilidad-parrafo{
-    max-width: 65%;
+    max-width: 80%;
     max-height: 25%;
     flex: 1; 
     min-width: 250px; 
@@ -753,6 +995,7 @@ nav {
     color: white;
     margin: 0 auto;
     margin-bottom: 20px;
+    text-align: justify;
 
 
 }
@@ -774,9 +1017,7 @@ nav {
     align-items: center;
     margin-top: 20px;
     padding-bottom: 30px;
-    background-color: #2E5234;
-   
-    
+    background-color: #2E5234;  
     
     
     
@@ -805,48 +1046,166 @@ nav {
 
 
 
+@media (max-width: 1280px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 930px) {
+  .sostenibilidad-titulo {
+    font-size: 4em;
+  }
+}
+
+@media (max-width: 630px) {
+  .sostenibilidad-titulo {
+    font-size: 3em;
+  }
+
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/*********************************Verificacion de la edad*********************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.age-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('/Yaka/img/fondoVerificacion.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.age-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+.logo-verificacion {
+  width: 250px; 
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.age-popup {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.8);
+  font-family: 'Poppins', sans-serif;
+  width: 320px;
+  position: relative;
+  z-index: 2;
+}
+
+.age-popup h2 {
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.age-popup p {
+  color: #444;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+/* Contenedor de los botones */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Estilo general de los botones */
+.age-popup button {
+  padding: 12px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Botón "Sí" */
+.age-popup button:first-child {
+  background: #2E5234;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(36, 186, 46, 0.6);
+}
+
+.age-popup button:first-child:hover {
+  background: #489248;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 15px rgba(83, 170, 91, 0.5);
+}
+
+/* Botón "No" */
+.age-popup button:last-child {
+  background: #A85385;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(255, 77, 77, 0.6);
+}
+
+.age-popup button:last-child:hover {
+  background: #c75b9a;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 15px rgba(141, 83, 170, 0.5);
+}
+
+
+
+
 /*********************************Nuestras Cervezas*********************************************/
 
 .marquesina{
-    width: 100%;
-    overflow: hidden;
-    background-color: #A85385;
-    color: white;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    .mensajes{
-        display: flex;
-        animation: desplazar 40s linear infinite;
-    }
-    .mensaje{
-        flex: none;
-        padding: 0 24%;
-        white-space: nowrap;
-        color: white;
-        font-size: 1.2em;
-        font-weight: 800;
-    }
+  width: 100%;
+  overflow: hidden;
+  background-color: #A85385;
+  color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  .mensajes{
+      display: flex;
+      animation: desplazar 40s linear infinite;
   }
-  @keyframes desplazar {
-    0% {
-        transform: translateX(-30%);
-    }
-    10% {
-        transform: translateX(70%);
-    }
-    55%{
-        transform: translateX(-90%);
-    }
-    70% {
-        transform: translateX(10%);
-    }
-    80% {
-        transform: translateX(-90%);
-    }
-    
-    
+  .mensaje{
+      flex: none;
+      padding: 0 24%;
+      white-space: nowrap;
+      color: white;
+      font-size: 1.2em;
+      font-weight: 800;
   }
+}
+@keyframes desplazar {
+  0% {
+      transform: translateX(-10%);
+  }
+  10% {
+      transform: translateX(70%);
+  }
+  55%{
+      transform: translateX(-140%);
+  }
+  
+}
 
 .Contenedor-fondo{
   background-image: url(../img/cervezasTodas.jpg);
@@ -906,7 +1265,14 @@ nav {
 
   }
   
-  .Tipos_cervezas article {
+  .Tipos_cervezas {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px;
+
+  }
+  
+  .Tipos_cervezas .cervecita {
     
     display: grid;
     grid-template-columns: 1fr 500px;
@@ -916,7 +1282,7 @@ nav {
     color: white;            
   }
 
-  .Tipos_cervezas article .imagenes {
+  .Tipos_cervezas .cervecita .imagenes {
     width: 500px;
     height: 500px;
     display: flex;
@@ -927,24 +1293,276 @@ nav {
 }
 
 
- .Tipos_cervezas article .imagenes img {
+ .Tipos_cervezas .cervecita .imagenes img {
     width: 500px;
     height: 500px;
     object-fit: cover;
     transition: transform 0.5s ease;
  }
 
-  .Tipos_cervezas article .imagenes:hover img {
+  .Tipos_cervezas .cervecita .imagenes:hover img {
     transform: translateX(-500px);
   }
-
-  .Tipos_cervezas article p {
+  .Tipos_cervezas .cervecita .cervecita_parrafo {
     font-size: 1.1rem;
     line-height: 1.4;
-    margin-bottom: 1em;
-    margin-right: 7em;
+    transform: translate(5%, -100%); /* Centra el texto */
+    margin-right: 5em;
+    margin-left: 5em;
+    text-align: justify;
+  }
+
+  
+  .Tipos_cervezas .cervecita .parrafo_araza{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    transform: translate(0.5%, -100%); /* Centra el texto */
+    margin-left: 15em;
+    text-align: justify;
+    grid-column: 2/3;
+  }
+
+
+
+  .Tipos_cervezas .cervecita .subtitle_cervezas{
+    font-size: 2.5rem;
+    margin-bottom: 6em;
+    font-family: "Rye", serif;
+    text-align: center;
+    margin-top: 3em;
+  }
+
+  .Tipos_cervezas .cervecita .subtitle_araza  {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4em;
+    transform: translate(-5%, -100%); /* Centra el texto */
+    font-family: "Rye", serif;
   }
 /*********************************Quienes somos*********************************************/
+
+
+
+.qs-quienes-somos{
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh; 
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 4rem;
+  padding: 4% 10%;
+  position: relative;
+  
+
+}
+
+.qs-quienes-somos video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100vh; 
+  object-fit: cover;
+  transform: translate(-50%, -50%) scaleX(-1); 
+  z-index: -2;
+}
+
+.qs-quienes-somos::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: -1;
+}
+
+.qs-imagen img{
+  max-width: 100%;
+  width: 560px;
+  height: auto;
+  border-radius: 20px;
+
+}
+
+.qs-texto{
+  padding: 6% 0;
+
+}
+
+.qs-texto h4{
+  color: #D4AF37;
+  font-size: 6em;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-family: "Rye", serif;
+
+}
+
+
+
+.qs-texto h1{
+  color: #fff;
+  font-size: 36px;
+  text-transform: capitalize;
+  font-weight: 700;
+  line-height: 46px;
+  margin-bottom: 30px;
+
+}
+
+.qs-texto hr{
+  width: 40%;
+  border: none;
+  height: 4px;
+  background-color: #D4AF37;
+  margin-bottom: 50px;
+
+}
+
+.qs-texto p{
+  max-width: 100%;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 60px;
+  text-align: justify;
+
+}
+
+.qs-texto-final{
+  display: flex;
+  justify-content: center;
+
+}
+
+.qs-texto1{
+  margin-right: 60px;
+
+}
+
+.qs-texto2{
+  margin-right: 60px;
+
+}
+
+.qs-texto-final h3{
+  color: #D4AF37;
+  font-size: 60px;
+  font-weight: 700;
+
+}
+
+.qs-texto-final h5{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+
+}
+
+
+
+
+@media(max-width:1385px){
+  .qs-quienes-somos{    
+    transition: .3s;
+  }
+  .qs-imagen img{
+    transition: .3s;      
+  }
+}
+
+@media(max-width:1240px){  
+  .qs-texto h1{
+    font-size: 30px;
+    transition: .3s;
+  }
+}
+
+@media(max-width:1040px){
+  .qs-quienes-somos{
+    grid-template-columns: 1fr;
+    height: 100%;
+    text-align: center;
+    padding: 10% 5%;
+
+  }
+  .qs-imagen img{
+    padding-top: 0px;
+  }
+
+  .qs-quienes-somos video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .qs-quienes-somos video {
+    height: 180vh; 
+  }
+  .qs-quienes-somos::before{
+    height: 180vh;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .qs-quienes-somos {
+    flex-direction: column;
+    text-align: center;
+    padding: 10% 5%;
+    
+    
+    
+  }
+
+  .qs-quienes-somos video {
+    height: 180vh; 
+  }
+
+  .qs-imagen img{
+    padding-top: 0px;
+    max-width: 350px;
+    align-items: center;
+  }
+  .qs-imagen{
+    align-items: center;
+  }
+  .qs-quienes-somos::before{
+    height: 180vh;
+  }
+
+  .quienes_somos_titulo{
+    max-width: 90%;
+  }
+
+  .qs-texto-final h3{
+    
+    font-size: 45px;
+    
+  
+  }
+  
+  .qs-texto-final h5{
+    
+    font-size: 12px;
+    
+  
+  }
+} 
+
+
+
+
+
+
+
+
+
 /*********************************Maridajes*********************************************/
 
   
@@ -990,6 +1608,8 @@ nav {
       border-radius: 15px;
       display: flex;
       align-items: center;
+      flex-direction: column;
+      text-align: justify;
   }
   
   article img {
@@ -1010,6 +1630,102 @@ nav {
       margin-top: 10px;
   }
 /*********************************Sostenibilidad*********************************************/
+
+.main_sostenibilidad{
+  background-color: #2E5234;
+}
+
+.sostenibilidad_fondo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.sostenibilidad_fondo .video_fondo{
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+  
+}
+
+.projects-section__projects {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.projects-section__projects {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.projects-section__project {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 450px;
+  height: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-section__project img {
+  width: 100%;   
+  height: 50%;   
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333; 
+  font-weight: bold;
+  background-color: #D4A017;
+  height: 50%; 
+  padding: 20px;
+  box-sizing: border-box; 
+}
+
+.card-content p {
+  text-align: justify;
+  margin: 0;
+}
+.btn {
+  display: inline-block;
+  background-color: #8B1E3F; 
+  color: #ffffff; 
+  border: none;
+  border-radius: 9px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #5A1329; 
+  transform: scale(1.05); 
+}
+
+.btn:active {
+  background-color: #3E0D1E; 
+  transform: scale(0.98);
+}
+
+
+
 /*********************************Contacto*********************************************/
 
 /* CONTACTO */
@@ -1224,7 +1940,6 @@ footer {
   hr{
     border: 1px solid #BF6F3A;
   }
-
 
 
 /*********************************Otros*********************************************/
