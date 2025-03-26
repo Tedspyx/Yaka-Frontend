@@ -130,6 +130,72 @@ nav {
   }
 
 
+
+/* Estilos para pantallas más pequeñas hasta 468px */
+@media (max-width: 468px) {
+  header {
+      padding: 0 20px; /* Añade un poco de padding horizontal */
+      height: auto; /* Ajusta la altura automáticamente */
+  }
+
+  header img {
+      height: 40px; /* Ajusta la altura del logo en móvil */
+  }
+
+  /* Oculta la navegación por defecto en móvil */
+  .navigation ul {
+      display: none;
+      flex-direction: column; /* Muestra los elementos en columna */
+      width: 100%; /* Ocupa todo el ancho */
+      position: absolute; /* Posición absoluta para que se despliegue */
+      top: 100%; /* Empieza justo debajo del header */
+      left: 0;
+      background-color: rgba(168, 83, 133,1); /* Fondo para el menú desplegado */
+      text-align: left; /* Alinea el texto a la izquierda */
+      padding: 20px; /* Añade padding al menú desplegado */
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Sombra para el menú */
+  }
+
+  .navigation ul.active {
+      display: flex; /* Muestra la navegación cuando la clase 'active' está presente */
+  }
+
+  /* Estilos para el botón del menú de hamburguesa */
+  .hamburger-menu {
+      display: block; /* Muestra el botón en móvil */
+      position: relative;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 101; /* Asegura que esté por encima del menú desplegado */
+  }
+
+  .hamburger-menu .bar {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      margin: 6px 0;
+      transition: all 0.3s ease-in-out;
+  }
+
+
+  nav.navigation > ul > li { /* Estilos para el menú principal en móvil */
+      margin: 0;
+      padding: 10px 20px;
+      border-left: none;
+      display: block;
+      text-align: left;
+  }
+
+  nav.navigation > ul > li a {
+      color: white;
+      display: block;
+      padding: 10px 0;
+  }
+}
   /************************MIGA DE PAN**********************************************/
 
 
@@ -1673,11 +1739,7 @@ nav {
       margin-right: 20px;
   }
   
-  footer {
-      background: #5a2151;
-      padding: 20px;
-      text-align: center;
-  }
+
   
   .contacto, .redes {
       margin-top: 10px;
@@ -1803,11 +1865,10 @@ nav {
       font-family: 'RYE', sans-serif;
       font-size: 4rem;
       color: #fff;
-      margin-top: -100px;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
       position: relative;
       z-index: 2;
-      padding-top: 40px;
+      padding-top: 3%
     }
     
     /* Contenido formulario */
@@ -1820,7 +1881,7 @@ nav {
     .form-container {
       max-width: 500px;
       margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color:#B76FA8;
       backdrop-filter: blur(5px);
       border-radius: 15px;
       padding: 30px;
@@ -1832,7 +1893,7 @@ nav {
       display: flex;
       flex-direction: column;
     }
-    
+
     form fieldset label {
       margin: 15px 0 5px;
       font-weight: bold;
@@ -1873,132 +1934,144 @@ nav {
   
 /*********************************Footer*********************************************/
 
-
 footer {
-  font-family: sans-serif;
-  color: #fff;            
-  background-color: #000000; /* Negro */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Sombra elegante */
-}
-
-/* ----- Barra superior (contacto) ----- */
-.footer-top {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px 0;
-  background-color: #1A050D; /* Verde oscuro */
-  border-bottom: 3px solid #1A050D; /* Borde dorado */
-}
-
-.footer-top .contact-item {
+  background: #5a2151;
+  padding: 20px;
   text-align: center;
-  max-width: 200px;
 }
-.footer-top h3 {
-  margin: 10px 0 5px;
-  color: #D4AF37;
-}
-.footer-top p {
-  margin: 0;
-  color: #fff;
-}
-
-/* ----- Contenido central ----- */
-.footer-middle {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  padding: 40px 60px;
-}
-
-/* Columnas del footer */
-.footer-col h2, .footer-col h3, .footer-col h4 {
-  color: #D4AF37; /* Dorado */
-  margin-bottom: 15px;
-  border-bottom: 2px solid #BF6F3A; /* Línea naranja elegante */
-  padding-bottom: 5px;
-}
-.footer-col p {
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.footer-col ul li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.footer-col ul li a:hover {
-  color: #BF6F3A; /* Naranja cálido */
-  text-decoration: underline;
-}
-
-/* Redes sociales */
-.social-links a {
-  display: inline-block;
-  margin-right: 10px;
-  color: #fff;
-  font-size: 1.4em;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-.social-links a:hover {
-  color: #BF6F3A; /* Naranja cálido */
-  transform: scale(1.1);
-}
-.social-links i{
-  width: 50px;
-
-}
-
-/* Formulario de suscripción */
-.footer-col form {
-  display: flex;
-  margin-top: 10px;
-  border: 2px solid #D4AF37;
-  border-radius: 20px;
-  overflow: hidden;
-}
-.footer-col form input {
-  flex: 1;
-  padding: 8px;
-  border: none;
-  outline: none;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-.footer-col form button {
-  background-color: #D4AF37; /* Naranja cálido */
-  border: none;
-  color: #000;
-  padding: 0 16px;
-  cursor: pointer;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  transition: background-color 0.3s ease;
-}
-.footer-col form button:hover {
-  background-color: #BF6F3A; /* Dorado */
-}
-
-/* ----- Barra inferior (copyright) ----- */
-.footer-bottom {
-  background-color: #1A050D; /* Dorado */
-  text-align: center;
-  padding: 15px 0;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.8);
-}
-.footer-bottom p {
-  margin: 0;
-  color: #fff;
-}
-hr{
-  border: 1px solid #BF6F3A;
-}
+footer {
+    font-family: sans-serif;
+    color: #fff;            
+    background-color: #000000; /* Negro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Sombra elegante */
+  }
+ 
+  /* ----- Barra superior (contacto) ----- */
+  .footer-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #1A050D; /* Verde oscuro */
+    border-bottom: 3px solid #1A050D; /* Borde dorado */
+  }
+  @media(min-width:375px) and (max-width:478px){
+    .footer-top{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+ 
+  .footer-top .contact-item {
+    text-align: center;
+    max-width: 200px;
+  }
+  .footer-top h3 {
+    margin: 10px 0 5px;
+    color: #fff;
+  }
+  .footer-top p {
+    margin: 0;
+    color: #fff;
+  }
+ 
+  /* ----- Contenido central ----- */
+  .footer-middle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 40px 60px;
+  }
+  @media(min-width:375px) and (max-width:478px){
+    .footer-middle{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+ 
+  /* Columnas del footer */
+  .footer-col h2, .footer-col h3, .footer-col h4 {
+    color: #D4AF37; /* Dorado */
+    margin-bottom: 15px;
+    border-bottom: 2px solid #BF6F3A; /* Línea naranja elegante */
+    padding-bottom: 5px;
+  }
+  .footer-col p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .footer-col ul li a:hover {
+    color: #BF6F3A; /* Naranja cálido */
+    text-decoration: underline;
+  }
+ 
+  /* Redes sociales */
+  .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 1.4em;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: #BF6F3A; /* Naranja cálido */
+    transform: scale(1.1);
+  }
+ 
+  /* Formulario de suscripción */
+  .footer-col form {
+    display: flex;
+    margin-top: 10px;
+    border: 2px solid #D4AF37;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .footer-col form input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  .footer-col form button {
+    background-color: #D4AF37; /* Naranja cálido */
+    border: none;
+    color: #000;
+    padding: 0 16px;
+    cursor: pointer;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+  .footer-col form button:hover {
+    background-color: #BF6F3A; /* Dorado */
+  }
+ 
+  /* ----- Barra inferior (copyright) ----- */
+  .footer-bottom {
+    background-color: #1A050D; /* Dorado */
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.8);
+  }
+  .footer-bottom p {
+    margin: 0;
+    color: #fff;
+  }
+  hr{
+    border: 1px solid #BF6F3A;
+  }
 
 
 /*********************************Otros*********************************************/
@@ -2075,7 +2148,7 @@ hr{
   
   .login-submit {
     width: 100%;
-    background-color: #701F5D;
+    background-color: #D4A017;
     color: white;
     padding: 14px 20px;
     margin: 15px 0;
@@ -2085,9 +2158,9 @@ hr{
     font-size: 16px;
   }
   
-  .login-submit:hover {
+  /* .login-submit:hover {
     background-color: #5a1a4d;
-  }
+  } */
   
   .register-link {
     text-align: center;
@@ -2117,7 +2190,7 @@ hr{
   .register-submit {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #D4A017;
     color: white;
     border: none;
     border-radius: 4px;
@@ -2125,10 +2198,10 @@ hr{
     font-size: 16px;
     margin-top: 10px;
   }
-  
+/*   
   .register-submit:hover {
     background-color: #45a049;
-  }
+  } */
   
   .login-link {
     text-align: center;
@@ -2350,3 +2423,12 @@ hr{
   border-radius: 4px;
   cursor: pointer;
 }
+
+/* #701F5D
+#1A050D
+#A85385
+#D4AF37
+#2E5234
+#BF6F3A
+#000000
+#FFFFFF */
