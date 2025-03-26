@@ -1033,10 +1033,10 @@ nav {
       font-family: 'RYE', sans-serif;
       font-size: 4rem;
       color: #fff;
-      margin-top: -100px;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
       position: relative;
       z-index: 2;
+      padding-top: 3%
     }
     
     /* Contenido formulario */
@@ -1049,7 +1049,7 @@ nav {
     .form-container {
       max-width: 500px;
       margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color:#B76FA8;
       backdrop-filter: blur(5px);
       border-radius: 15px;
       padding: 30px;
@@ -1061,7 +1061,7 @@ nav {
       display: flex;
       flex-direction: column;
     }
-    
+
     form fieldset label {
       margin: 15px 0 5px;
       font-weight: bold;
@@ -1301,7 +1301,7 @@ footer {
   
   .login-submit {
     width: 100%;
-    background-color: #701F5D;
+    background-color: #D4A017;
     color: white;
     padding: 14px 20px;
     margin: 15px 0;
@@ -1311,9 +1311,9 @@ footer {
     font-size: 16px;
   }
   
-  .login-submit:hover {
+  /* .login-submit:hover {
     background-color: #5a1a4d;
-  }
+  } */
   
   .register-link {
     text-align: center;
@@ -1343,7 +1343,7 @@ footer {
   .register-submit {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #D4A017;
     color: white;
     border: none;
     border-radius: 4px;
@@ -1351,10 +1351,10 @@ footer {
     font-size: 16px;
     margin-top: 10px;
   }
-  
+/*   
   .register-submit:hover {
     background-color: #45a049;
-  }
+  } */
   
   .login-link {
     text-align: center;
@@ -1576,3 +1576,12 @@ footer {
   border-radius: 4px;
   cursor: pointer;
 }
+
+/* #701F5D
+#1A050D
+#A85385
+#D4AF37
+#2E5234
+#BF6F3A
+#000000
+#FFFFFF */
