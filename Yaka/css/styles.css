@@ -1087,99 +1087,129 @@ nav {
 
 .age-overlay {
   position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: url('/Yaka/img/fondoVerificacion.jpg') no-repeat center center/cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF9E7; /* Color de la cebada */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   z-index: 9999;
+  padding: 20px;
+  
 }
 
-.age-overlay::before {
-  content: "";
+/* Imágenes de hojas decorativas */
+.leaf-top-left {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6); 
-  backdrop-filter: blur(5px);
-  z-index: 1;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: auto;
+  opacity: 0.7;
+}
+
+.leaf-bottom-right {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: auto;
+  opacity: 0.7;
 }
 
 .logo-verificacion {
-  width: 250px; 
+  width: 400px;
   margin-bottom: 20px;
-  z-index: 2;
 }
 
-.age-popup {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 25px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.8);
+.age-content {
   font-family: 'Poppins', sans-serif;
-  width: 320px;
-  position: relative;
-  z-index: 2;
+  color: #231f20; /* Color actualizado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-.age-popup h2 {
-  color: black;
-  font-size: 22px;
+.age-content h2 {
+  font-size: 32px;
   font-weight: 600;
+  margin: 0;
+  color: #231f20; /* Color aplicado al título */
 }
 
-.age-popup p {
-  color: #444;
-  font-size: 16px;
-  margin-top: 15px;
+.age-content p {
+  font-size: 18px;
+  max-width: 350px;
+  color: #231f20; /* Color aplicado al párrafo */
 }
+
 
 /* Contenedor de los botones */
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   margin-top: 15px;
 }
 
 /* Estilo general de los botones */
-.age-popup button {
-  padding: 12px 20px;
+.button-container button {
+  padding: 18px 24px;
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 600;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
+  min-width: 100px;
 }
 
 /* Botón "Sí" */
-.age-popup button:first-child {
+.button-container button:first-child {
   background: #2E5234;
   color: white;
-  box-shadow: 0px 4px 10px rgba(36, 186, 46, 0.6);
 }
 
-.age-popup button:first-child:hover {
+.button-container button:first-child:hover {
   background: #489248;
   transform: scale(1.1);
-  box-shadow: 0px 6px 15px rgba(83, 170, 91, 0.5);
 }
 
 /* Botón "No" */
-.age-popup button:last-child {
+.button-container button:last-child {
   background: #A85385;
   color: white;
-  box-shadow: 0px 4px 10px rgba(255, 77, 77, 0.6);
 }
 
-.age-popup button:last-child:hover {
+.button-container button:last-child:hover {
   background: #c75b9a;
   transform: scale(1.1);
-  box-shadow: 0px 6px 15px rgba(141, 83, 170, 0.5);
 }
 
+
+/* Imágenes de hojas decorativas */
+.leaf-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 800px; /* Aumenta el tamaño */
+  height: auto;
+  opacity: 0.8;
+}
+
+.leaf-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 800px; /* Aumenta el tamaño */
+  height: auto;
+  opacity: 0.8;
+}
 
 
 
