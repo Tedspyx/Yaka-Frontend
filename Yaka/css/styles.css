@@ -22,6 +22,7 @@ Colores del sitio web
 body{
     font-family: 'Montserrat', sans-serif;  
     overflow-x: hidden;  
+    
 }
 
 a{
@@ -30,15 +31,16 @@ a{
 
 /*********************************header section*********************************************/
 header{
-    width: 100%;
-    margin: auto;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 100;
-    background-color: #000;
-    justify-content: flex-end;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 40px; /* Justo debajo de la marquesina */
+  left: 0;
+  z-index: 105; /* Por debajo de la marquesina pero encima de la miga */
+  background-color: #000;
+  justify-content: flex-end;
 }
 
 header img {
@@ -132,14 +134,19 @@ nav {
 
 
   .miga {
-    position: absolute; 
-    background: rgba(0, 0, 0, 0.7); 
+    width: 100%;
+    position: fixed;
+    top: 90px; /* Justo debajo del header */
+    left: 0;
+    
     display: flex;
-    z-index: 100; 
-    padding: 5px 10px; 
+    z-index: 100; /* Debajo del header pero sobre el contenido */
+    padding: 5px 10px;
     justify-content: flex-start;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    width: auto; /* Permite que el ancho sea dinámico según el contenido */
+  max-width: 80%; /* Limita el ancho máximo para evitar que se extienda demasiado */
 }
 
 
@@ -162,13 +169,13 @@ nav {
 .miga li:not(:last-child)::after {
     content: ">"; 
     margin: 0 10px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(213, 220, 16, 0.723);
     font-weight: bold;
 }
 
 .miga a {
     text-decoration: none;
-    color: #A85385; 
+    color: #D4AF37; 
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
@@ -1186,6 +1193,10 @@ nav {
   height: 40px;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 110; /* Se mantiene por encima del header y la miga */
   .mensajes{
       display: flex;
       animation: desplazar 40s linear infinite;
@@ -1392,11 +1403,14 @@ nav {
   width: 560px;
   height: auto;
   border-radius: 20px;
+  margin-top: 150px;
+
 
 }
 
 .qs-texto{
-  padding: 6% 0;
+  padding: 6% 0%;
+  margin-top: 50px;
 
 }
 
@@ -1748,7 +1762,7 @@ nav {
     border-bottom: 5px solid #f81818 !important;
   }
   .image-container {
-      background: url("../img/cervezaOriginal.webp") center/cover no-repeat;
+      background: url("../assets/img/cervezaOriginal.webp") center/cover no-repeat;
       width: 100%;
       height: 100vh;
     }
@@ -1763,6 +1777,7 @@ nav {
       text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
       position: relative;
       z-index: 2;
+      padding-top: 40px;
     }
     
     /* Contenido formulario */
