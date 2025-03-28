@@ -22,11 +22,88 @@ Colores del sitio web
 body{
     font-family: 'Montserrat', sans-serif;  
     overflow-x: hidden;  
+    transition: all 0.3s ease;
     
 }
 
 a{
     text-decoration: none;
+}
+
+/*---------------------------------------------Accesibilidad--------------------------------------------*/
+.accessibility-button {
+  background-color: #D4AF37;
+  color: #fff;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  font-size: 24px;
+}
+
+.accessibility-menu {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #D4AF37;
+  color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  width: 220px; /* Mayor amplitud para mejor visualización */
+}
+
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  background-color: #ffffff;
+  color: #1A050D;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.05); /* Efecto sutil al pasar el mouse */
+}
+
+.menu-item i {
+  color: #1A050D;
+  font-size: 18px;
+}
+
+.menu-item span {
+  font-weight: bold;
+}
+
+
+.large-text { font-size: 1.5em; }
+.small-text { font-size: 0.8em; }
+.smart-contrast { filter: invert(1); }
+
+body.contrast-bn {
+  filter: grayscale(100%);
+}
+
+body.large-text {
+  font-size: 1.2rem;
 }
 
 /*********************************header section*********************************************/
@@ -47,6 +124,9 @@ header img {
     margin-right: auto; 
     height: 100%; 
     align-items: center;
+    padding-left: 20px; /* Espacio a la izquierda del logo */
+    width: 7%; /* Mantiene la proporción del logo */
+    object-fit: cover;
 }
 
 
@@ -1010,7 +1090,7 @@ nav {
 
 .sostenibilidad-titulo {
     font-size: 6em;
-    font-family: "Rye", serif;
+    font-family: "Rye", serif ;
     text-align: center;
     margin-bottom: 20px;
     color: white;  
@@ -1695,55 +1775,7 @@ nav {
       color: white;
   }
   
-  header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #1A050D;
-      padding: 10px 20px;
-  }
-  
-  nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-  }
-  
-  .active {
-      color: #d14d72;
-  }
-  
-  section {
-        width: 100%;
-        /* background: rgba(0, 0, 0, 0.5); */
-        padding: 20px;
-  }
-  
-  article {
-      position: relative;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      text-align: justify;
-  }
-  
-  article img {
-      width: 120px;
-      height: 120px;
-      /* border-radius: 50%; */
-      background: #ddd;
-      margin-right: 20px;
-  }
-  
 
-  
-  .contacto, .redes {
-      margin-top: 10px;
-  }
 /*********************************Sostenibilidad*********************************************/
 
 .main_sostenibilidad{
@@ -1780,7 +1812,7 @@ nav {
 }
 
 .projects-section__project {
-  background-color: #ffffff;
+  background-color: #D4AF37;
   border-radius: 10px;
   overflow: hidden;
   width: 450px;
@@ -1794,7 +1826,7 @@ nav {
 
 .projects-section__project img {
   width: 100%;   
-  height: 50%;   
+  height: 124%;   
   object-fit: cover;
 }
 
@@ -1804,7 +1836,7 @@ nav {
   justify-content: center;
   color: #333; 
   font-weight: bold;
-  background-color: #D4A017;
+  background-color: #D4AF37;
   height: 50%; 
   padding: 20px;
   box-sizing: border-box; 
@@ -1814,31 +1846,18 @@ nav {
   text-align: justify;
   margin: 0;
 }
-.btn {
-  display: inline-block;
-  background-color: #8B1E3F; 
-  color: #ffffff; 
-  border: none;
-  border-radius: 9px;
-  padding: 10px 20px;
-  margin-top: 15px;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+
+.projects-section__project  h2{
+  font-size: 24px;
+  margin: 10px 0;
+  color: #333; 
+  background-color: #D4AF37;
 }
 
-.btn:hover {
-  background-color: #5A1329; 
-  transform: scale(1.05); 
-}
 
-.btn:active {
-  background-color: #3E0D1E; 
-  transform: scale(0.98);
+.sostenibilidad_section{
+  padding: 40px;
 }
-
 
 
 
@@ -2424,11 +2443,83 @@ footer {
   cursor: pointer;
 }
 
-/* #701F5D
-#1A050D
-#A85385
-#D4AF37
-#2E5234
-#BF6F3A
-#000000
-#FFFFFF */
+/* --------------------------------------------------Estilos para pantallas más pequeñas hasta 468px----------------------- */
+@media (max-width: 468px) {
+  header {
+      padding: 0 20px;
+      height: auto;
+  }
+ 
+  header img {
+      height: 40px;
+  }
+ 
+  /* Oculta la navegación por defecto en móvil */
+  .navigation ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(168, 83, 133,1);
+      text-align: left;
+      padding: 20px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+ 
+  .navigation ul.active {
+      display: flex; /* Muestra la navegación cuando la clase 'active' está presente */
+  }
+ 
+  /* Estilos para el botón del menú de hamburguesa */
+  .hamburger-menu {
+      display: block; /* Muestra el botón en móvil */
+      position: relative;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 101; /* Asegura que esté por encima del menú desplegado */
+  }
+ 
+  .hamburger-menu .bar {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      margin: 6px 0;
+      transition: all 0.3s ease-in-out;
+  }
+ 
+ 
+  nav.navigation > ul > li {
+      margin: 0;
+      padding: 10px 20px;
+      border-left: none;
+      display: block;
+      text-align: left;
+  }
+ 
+  nav.navigation > ul > li a {
+      color: white;
+      display: block;
+      padding: 10px 0;
+  }
+}
+ 
+ /*----------------------------------------------------footer responsive--------------------------------------------------*/
+  @media(min-width:375px) and (max-width:478px){
+    .footer-top{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+ 
+  @media(min-width:375px) and (max-width:478px){
+    .footer-middle{
+      display: flex;
+      flex-direction: column;
+    }
+  }

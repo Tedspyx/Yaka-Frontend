@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Document</title>
+    <title>Sostenibilidad</title>
 </head>
 <body>
   <section class="marquesina">
@@ -16,16 +16,20 @@
   </section>
   <header>
     <img src="../assets/img/logo.png" alt="Logo de yaka">
+    <button class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
     <nav role="navigation" class="navigation">
         <ul>
             <li><a href="../index.html" class="active">Inicio</a></li>
             <li><a href="./nuestras-cervezas.html">Nuestras Cervezas</a></li>
             <li><a href="./quienes-somos.html">Quienes Somos</a></li>
             <li><a href="./maridajes.html">Maridajes</a></li>
-            <li><a href="sostenibilidad.html">Sostenibilidad</a></li>
+            <li><a href="./sostenibilidad.html">Sostenibilidad</a></li>
             <li><a href="./contacto.html">Contacto</a></li>
-            <!-- <li><button id="login-btn" class="login-button">Iniciar Sesión</button></li> -->
-        </ul>
+            </ul>
     </nav>
 </header>
 
@@ -35,43 +39,75 @@
     <li><a href="./quienes-somos.html"><i class="fa fa-users"></i> Sostenibilidad</a></li>
   </ul>
 </div>
-
     
     <main class="main_sostenibilidad">
         <section class="sostenibilidad_fondo">
             <video class="video_fondo" loop="loop" autoplay="autoplay">
-                <source src="../assets/videos/Video_sostenibilidad2.mp4" type="video/mp4">
+                <source src="../assets/videos/natural_video.mp4" type="video/mp4">
             </video>    
         </section>
         
         <section class="sostenibilidad_section">
-          <h1>Sostenibilidad</h1>
+          <h1 class="sostenibilidad-titulo">Sostenibilidad</h1>
           <ul class="projects-section__projects">
               <li class="projects-section__project projects-section__project--brasil">
-                  <img src="../assets/img/yaka_corales.png" alt="">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#2E5234" fill-opacity="1" d="M0,0L21.8,10.7C43.6,21,87,43,131,85.3C174.5,128,218,192,262,224C305.5,256,349,256,393,234.7C436.4,213,480,171,524,160C567.3,149,611,171,655,186.7C698.2,203,742,213,785,202.7C829.1,192,873,160,916,128C960,96,1004,64,1047,64C1090.9,64,1135,96,1178,122.7C1221.8,149,1265,171,1309,154.7C1352.7,139,1396,85,1418,58.7L1440,32L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"></path>
-                  </svg>
+                  <img src="../assets/img/agricultores1.png" alt="Agricultores en un campo grande">        
+                    
                   <div class="card-content">
-                      <p>Los proyectos de plantaciones en Brasil protegen a miles de plantas y animales en peligro.</p>
+                      <p>En YAKÁ, seleccionamos cuidadosamente insumos provenientes del Amazonas, una región rica en biodiversidad y cultura. Nuestro compromiso con la sostenibilidad comienza desde el origen de nuestros ingredientes. 
+                        Al trabajar directamente con pequeños productores locales, no solo garantizamos la frescura y autenticidad de nuestros sabores, sino que también impulsamos la economía de las comunidades amazónicas.</p>
                   </div>
               </li>
   
               <li class="projects-section__project projects-section__project--senegal">
-                  <img src="../assets/img/EmpaqueCircular.png" alt="">
+                  <img src="../assets/img/cervezaaaaaaaaa.png" alt="cerveza con un mensaje de sostenibilidad">
+                  
                   <div class="card-content">
-                      <p>Las plantaciones de árboles en Senegal ayudan a restaurar la tierra desertificada y a devolverle su fertilidad.</p>
+                      <p>Nuestras etiquetas están fabricadas con materiales biodegradables, que se descomponen de forma natural sin dejar residuos contaminantes. Este enfoque ecoamigable nos permite brindar productos que no solo conquistan el paladar, sino que también contribuyen a proteger el planeta.</p>
                   </div>
               </li>
   
               <li class="projects-section__project projects-section__project--indonesia">
-                  <img src="../assets/img/AgriculturaInteligente.png" alt="">
+                  <img src="../assets/img/paneles.png" alt="paneles solares">
+                   
                   <div class="card-content">
-                      <p>En Indonesia, ayudamos a restaurar bosques en antiguas plantaciones de aceite de palma mientras creamos formas de ingresos alternativas.</p>
+                      <p> En YAKÁ, implementamos técnicas innovadoras que optimizan el uso de recursos naturales. Nuestras instalaciones están diseñadas para reducir significativamente el consumo de agua, un recurso vital que cuidamos con especial atención. Mediante sistemas de recirculación y filtrado, reaprovechamos el agua utilizada durante la producción, minimizando el desperdicio.</p>
                   </div>
               </li>
           </ul>
-      </section>
+          <div class="accessibility-button" id="accessibilityIcon">
+            <i class="fa-solid fa-universal-access fa-lg" style="color: #fff;"></i>
+        </div>
+        
+        <section class="accessibility-menu" id="accessibilityMenu">
+            <article class="menu-grid">
+                <button class="menu-item" id="readPage">
+                    <i class="fa-solid fa-ear-listen fa-lg"></i>
+                    <span>Leer página</span>
+                </button>
+        
+                <button class="menu-item" id="stopReading">
+                    <i class="fa-solid fa-ear-deaf"></i>
+                    <span>Detener lectura</span>
+                </button>
+        
+                <button class="menu-item" id="smartContrast">
+                    <i class="fa-solid fa-circle-half-stroke fa-lg"></i>
+                    <span>Contraste B/N</span>
+                </button>
+        
+                <button class="menu-item" id="increaseText">
+                    <i class="fa-solid fa-font fa-lg"></i>
+                    <span>Agrandar texto</span>
+                </button>
+        
+                <button class="menu-item" id="decreaseText">
+                    <i class="fa-solid fa-font fa-xl"></i>
+                    <span>Reducir texto</span>
+                </button>
+            </article>
+        </section>
+        
     </main> 
     <footer>
         <div class="footer-top">
@@ -95,7 +131,7 @@
         <!-- Contenido central -->
         <div class="footer-middle">
           <div class="footer-col">
-            <h2>Yaká <span>Cerveza Artesanal</span></h2>
+            <h3>Yaká <span>Cerveza Artesanal</span></h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit...
             </p>
@@ -139,5 +175,6 @@
       </footer>
 
       <script src="https://kit.fontawesome.com/74662a5f03.js" crossorigin="anonymous"></script>
+      <script src="../dist/accesibilidad.js"></script>
 </body>
 </html>
