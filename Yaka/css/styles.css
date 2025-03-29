@@ -35,8 +35,8 @@ a{
   background-color: #D4AF37;
   color: #fff;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,9 +44,9 @@ a{
   position: fixed;
   bottom: 20px;
   right: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  font-size: 24px;
+  font-size: 34px;
+  pointer-events: auto;
 }
 
 .accessibility-menu {
@@ -59,38 +59,58 @@ a{
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  width: 220px; /* Mayor amplitud para mejor visualización */
+  width: 220px;
 }
 
 .menu-grid {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   gap: 10px;
 }
 
 .menu-item {
   background-color: #ffffff;
   color: #1A050D;
+  border: 2px solid #A85385; 
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 12px 16px; 
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px; 
   cursor: pointer;
+  font-size: 16px; 
 }
 
 .menu-item:hover {
   background-color: #f5f5f5;
-  transform: scale(1.05); /* Efecto sutil al pasar el mouse */
+  transform: scale(1.05);
 }
 
 .menu-item i {
   color: #1A050D;
-  font-size: 18px;
+  font-size: 20px; 
 }
 
-.menu-item span {
-  font-weight: bold;
+.menu-item-1 {
+  background-color: #ffffff;
+  color: #1A050D;
+  border: 2px solid #A85385; 
+  border-radius: 8px;
+  padding: 12px 16px; 
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  font-size: 16px; 
+}
+
+.menu-item-1:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.05);
+}
+
+.menu-item-1 i {
+  color: #1A050D;
+  font-size: 20px; 
 }
 
 
@@ -898,8 +918,11 @@ nav {
 
 
 .quienes_somos_parrafo p {
-    font-size: 1.2rem;
+        font-size: 1.3rem;
     line-height: 1.6;
+    text-align: center;
+    padding-bottom: 8%;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -1147,15 +1170,13 @@ nav {
 .sostenibilidad-parrafo{
     max-width: 80%;
     max-height: 25%;
-    flex: 1; 
     min-width: 250px; 
-    padding-left: 10px;
     color: white;
     margin: 0 auto;
     margin-bottom: 20px;
     text-align: justify;
-
-
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .sostenibilidad-parrafo p {
@@ -1430,6 +1451,7 @@ nav {
     transform: translate(-50%, -50%); /* Centra el texto */
     line-height: 1.2; /*para que no se vea tan pegado al borde*/
     z-index: 2; /*para que se vea por encima del fondo*/
+    font-weight: normal;
 
 }
 
@@ -1443,6 +1465,7 @@ nav {
     left: 53%;
     transform: translate(-50%, -50%); /* Centra el texto */
     z-index: 2;
+    font-weight: normal;
     
 }
 
@@ -1472,7 +1495,10 @@ nav {
     grid-template-rows: 1fr 0.1px;                 
     align-items: center;             
     margin: 40px 0;      
-    color: white;            
+    color: white;  
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;          
   }
 
   .Tipos_cervezas .cervecita .imagenes {
@@ -1499,24 +1525,25 @@ nav {
     transform: translateX(-500px);
   }
   .Tipos_cervezas .cervecita .cervecita_parrafo {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.4;
-    transform: translate(5%, -100%); /* Centra el texto */
-    margin-right: 5em;
-    margin-left: 5em;
+    margin-right: 6em;
+    margin-left: 3em;
     text-align: justify;
-    padding-bottom: 1em;
+    transform: translate(5%, -20%);
+    margin-bottom: 19em;
   }
 
   
   .Tipos_cervezas .cervecita .parrafo_araza{
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.4;
     transform: translate(0.5%, -100%); /* Centra el texto */
     margin-right: 3em;
     text-align: justify;
     grid-column: 2/3;
-    padding-bottom: 2em;
+    margin-bottom: 5em;
+   
   }
 
 
@@ -1754,27 +1781,154 @@ nav {
   }
 } 
 
-
-
-
-
-
-
-
-
 /*********************************Maridajes*********************************************/
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #1A050D, #582b12);
+  color: white;
+}
 
-  
+.maridajes-fondo{
+  background-image: url(../assets/img/comida_maridajes.jpg);
+  padding: 350px 100px;
+  text-align: center;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+}
 
-  
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #582b12, #000);
-      color: white;
-  }
-  
+.maridajes-fondo:before {
+  content:'';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.453);
+}
+
+.maridajes-fondo h1{
+  font-family: 'RYE', sans-serif;
+  font-size: 120px;
+  color: #fff;
+  position: absolute;
+  top: 30%;
+  left: 53%;
+  transform: translate(-50%, -20%);
+  line-height: 1.2;
+  z-index: 2;
+  font-weight: normal;
+}
+
+.container-maridajes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 50px;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+.card-maridajes {
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.maridajes-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-maridajes:hover .maridajes-card {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Rye', sans-serif;
+}
+
+.front h1{
+  font-size: 2.0em;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  font-weight: normal;
+}
+
+.card1{
+  background-image: url(../assets/img/maridaje_costillas.png);
+  background-size: cover;
+  background-position: center;
+}
+.card1:before,
+.card2:before,
+.card3:before,
+.card4:before,
+.card5:before,
+.card6:before {
+  content:'';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.412);
+}
+
+.card2{
+  background-image: url(../assets/img/hamburguesa_frutos\ rojos.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.card3{
+  background-image: url(../assets/img/ceviche_maridaje.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.card4{
+  background-image: url(../assets/img/postrecito_maridale.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.card5{
+  background-image: url(../assets/img/brochetas_maridaje.png);
+  background-size: cover;
+  background-position: center;
+}
+.card6{
+  background-image: url(../assets/img/helado_maridaje.png);
+  background-size: cover;
+  background-position: center;
+}
+.back {
+  background-color: #582b12;
+  color: #fff;
+  transform: rotateY(180deg);
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
 
 /*********************************Sostenibilidad*********************************************/
 
@@ -1873,7 +2027,7 @@ nav {
     border-bottom: 5px solid #f81818 !important;
   }
   .image-container {
-      background: url("../assets/img/cervezaOriginal.webp") center/cover no-repeat;
+      background: url("../assets/img/fondo_contacto.jpg") center/cover no-repeat ;
       width: 100%;
       height: 100vh;
     }
@@ -1882,12 +2036,13 @@ nav {
     .titulo-contacto {
       text-align: center;
       font-family: 'RYE', sans-serif;
-      font-size: 4rem;
+      font-size: 6rem;
       color: #fff;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.864);
       position: relative;
       z-index: 2;
-      padding-top: 3%
+      padding-top: 7%;
+      font-weight: normal;
     }
     
     /* Contenido formulario */
@@ -1900,7 +2055,7 @@ nav {
     .form-container {
       max-width: 500px;
       margin: 0 auto;
-      background-color:#B76FA8;
+      background-color:#A85385;
       backdrop-filter: blur(5px);
       border-radius: 15px;
       padding: 30px;

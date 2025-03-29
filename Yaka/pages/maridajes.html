@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <title>Maridajes</title>
 </head>
 <body>
@@ -36,26 +38,79 @@
 <div class="miga">
   <ul>
     <li><a href="../index.html"><i class="fa fa-home"></i> Inicio</a></li>
-    <li><a href="./quienes-somos.html"><i class="fa fa-users"></i> Maridajes</a></li>
+    <li><a href="./maridajes.html"><i class="fa fa-users"></i> Maridajes</a></li>
   </ul>
 </div>
 
     <main>
-        <section class="maridajes">
-            <article class="maridaje-item">
-                <img src="../assets/img/mezclaLata.jpeg" alt="imagen1">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dolor?</p>
-            </article>
-            <article class="maridaje-item">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dolor?</p>
-                <img src="../assets/img/acaiLata.jpeg" alt="imagen2">                
-            </article>
-            <article class="maridaje-item">
-                <img src="../assets/img/mezclaLata.jpeg" alt="imagen3">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dolor?</p>
-            </article>
-        </section>
+      <section class="maridajes-fondo">
+        <h1>Maridajes</h1>
+      </section>
+
+      <section class="container-maridajes">
+        <article class="card-maridajes">
+            <div class="maridajes-card">
+                <div class="front card1"><h1>CARNES AHUMADAS</h1></div>
+                <div class="back">Las notas frutales de nuestra cerveza de açaí equilibran los sabores intensos y ahumados de carnes BBQ y quesos curados. ¡Un maridaje que eleva cada bocado! ¿Te atreves a probarlo?</div>
+            </div>
+        </article>
+        <article class="card-maridajes">
+            <div class="maridajes-card">
+                <div class="front card2"><h1>HAMBURGUESAS</h1></div>
+                <div class="back">La jugosidad de una hamburguesa gourmet, realzada con una salsa de frutos rojos, se funde a la perfección con la frescura y el dulzor de nuestra cerveza de açaí. ¡Perfecto para paladares exigentes!</div>
+            </div>
+        </article>
+        <article class="card-maridajes">
+            <div class="maridajes-card">
+                <div class="front card3"><h1>CEVICHE PERUANO DE MANGO</h1></div>
+                <div class="back">Disfruta del equilibrio perfecto entre la acidez cítrica del ceviche y el toque frutal de nuestra cerveza de araza. Un maridaje que transporta tus sentidos directo al corazón del Amazonas. </div>
+            </div>
+        </article>
+        <article class="card-maridajes">
+            <div class="maridajes-card">
+                <div class="front card4"><h1>MOUSSE DE MARACUYÁ</h1></div>
+                <div class="back">La cremosidad del mousse de maracuyá y su base crujiente se potencian con la frescura de nuestra cerveza de araza. Un postre que sabe tan bien como se ve. </div>
+            </div>
+        </article>
+        <article class="card-maridajes">
+            <div class="maridajes-card">
+                <div class="front card5"><h1>BROCHETA DE POLLO</h1></div>
+                <div class="back">El sabor agridulce del tamarindo se fusiona con las notas frutales de nuestra cerveza de açaí + araza, creando una combinación que despierta tus sentidos. </div>
+            </div>
+        </article>
+        <article class="card-maridajes">
+            <div class="maridajes-card">
+                <div class="front card6"><h1>HELADO DE COCO CON TROZOS DE ACAI</h1></div>
+                <div class="back">El dulzor tropical del coco se realza con los toques frutales de nuestra cerveza de açaí. ¿Un postre diferente? ¡Aquí lo tienes!</div>
+            </div>
+        </article>
+    </section>
+
+    <div class="accessibility-button" id="accessibilityIcon">
+      <i class="fa-solid fa-universal-access fa-lg" style="color: #fff;"></i>
+  </div>
+  
+  <section class="accessibility-menu" id="accessibilityMenu">
+      <article class="menu-grid">
+          <button class="menu-item" id="smartContrast">
+              <i class="fa-solid fa-circle-half-stroke fa-lg"></i>
+              <span>Contraste B/N</span>
+          </button>
+  
+          <button class="menu-item" id="increaseText">
+              <i class="fa-solid fa-font fa-lg"></i>
+              <span>Agrandar texto</span>
+          </button>
+  
+          <button class="menu-item-1" id="decreaseText">
+              <i class="fa-solid fa-font fa-xl"></i>
+              <span>Reducir texto</span>
+          </button>
+      </article>
+    </section>
     </main>
+
+
     <footer>
       <div class="footer-top">
         <div class="contact-item">
@@ -123,5 +178,6 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/74662a5f03.js" crossorigin="anonymous"></script>
+    <script src="../dist/accesibilidad.js"></script>
 </body>
 </html>
