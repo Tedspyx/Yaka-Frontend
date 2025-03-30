@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     apellido: user.apellido,
                     email: user.email,
                     edad: user.edad,
-                    tipoUsuario: user.tipoUsuario
+                    role: user.role
                 })); 
 
                 // Cerrar modal del login 
@@ -196,9 +196,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="perfil">
                         <button class="perfil-btn">${dataUser.nombre} ▼</button>
                         <div class="perfil-contenido">
-                            <a href="#" id="ver-perfil">Mi Perfil</a>
-                            <a href="#" id="ver-orden">Mis Pedidos</a>
-                            <a href="#" id="logout-btn">Cerrar Sesión</a>
+                            <li><a href="#" id="ver-perfil">Mi Perfil</a></li>  
+                            <li><a href="#" id="ver-orden">Mis Pedidos</a></li>
+                            <li><a href="#" id="logout-btn">Cerrar Sesión</a></li>
                         </div>
                     </div>`;
                 
@@ -207,6 +207,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 cartLi.innerHTML = `<a href="#" id="cart-btn" class="cart-button">🛒 <span class="cart-count">0</span></a>`;
                 navBar.appendChild(cartLi);
                 
+
+                //Evento para desplegar menu
+                const btnPerfil = navBar.querySelector('.perfil-btn');
+                const perfilContenido = navBar.querySelector('.perfil-contenido');
+                btnPerfil.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if(btnPerfil){
+                        perfilContenido.style.display=perfilContenido.style.display === "block" ? "none" : "block";
+                    }
+                });
+                //Cerrar menu de perfil si se clickea fuera de el
+                document.addEventListener('click',(e)=>{
+                    if(!btnPerfil.contains(e.target) && !perfilContenido.contains(e.target)){
+                        perfilContenido.style.display="none";
+                    }   
+                });
                 // Añadir eventos al menu del perfil
                 const verPerfil = document.getElementById('ver-perfil');
                 if (verPerfil) {
@@ -232,13 +248,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Evento al boton del carro
-                // const cartBtn = document.getElementById('cart-btn');
-                // if (cartBtn) {
-                //     cartBtn.addEventListener('click', showCartModal);
-                // }
+                const cartBtn = document.getElementById('cart-btn');
+                if (cartBtn) {
+                    cartBtn.addEventListener('click', showCartModal);
+                }
                 
-                // // Actualizar contador del carrito
-                // updateCartCount();
+                // Actualizar contador del carrito
+                updateCartCount();
             }
         }
     }
@@ -283,11 +299,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
         // Declarar profileModal fuera del bloque if
         let profileModal = document.getElementById('profile-modal');
-    
+        
         if (!profileModal) {
             // Crear el modal
             profileModal = document.createElement('div');
-            profileModal.id = 'profile-modal';
+            profileModal.id = ' ';
             profileModal.className = 'modal';
     
             profileModal.innerHTML = `
@@ -340,27 +356,27 @@ document.addEventListener('DOMContentLoaded', function() {
         if (profileEmail) profileEmail.textContent = dataUser.email || '';
     
         const profileType = document.getElementById('profile-type');
-        if (profileType) profileType.textContent = dataUser.tipoUsuario || ''; // revisar esta parte
+        if (profileType) profileType.textContent = dataUser.role || ''; // revisar esta parte
     
         // Mostrar modal
         profileModal.style.display = 'block';
     }
 
-    // // Función para configurar controles de cantidad en productos
+    // // // Función para configurar controles de cantidad en productos
     // function setupProductQuantityControls() {
     //     // Verificar si estamos en la página de cervezas
-    //     if (window.location.href.includes('Nuestras_cervezas.html')) {
+    //     if (window.location.href.includes('nuestras-cervezas.html')) {
     //         // Obtener todos los artículos de cerveza
-    //         const cervezaArticles = cervezasSection.querySelectorAll('article');
+    //         const cervezaArticles = document.querySelectorAll('article');
             
-    //         cervezaArticles.forEach((article, index) => {
+    //         cervezaArticles.forEach((article,index) => {
     //             // Crear nombres de producto basados en el contenido
     //             let productName;
-    //             if (index === 0) productName = 'Cerveza Açaí';
-    //             else if (index === 1) productName = 'Cerveza Aráza';
-    //             else productName = 'Cerveza Dual';
+    //             if (index === 0) productName = 'Açai Místico';
+    //             else if (index === 1) productName = 'Arazá Solar';
+    //             else productName = 'Selva Fusión';
                 
-    //             // Crear un div para los controles de cantidad
+    // //             // Crear un div para los controles de cantidad
     //             const quantityControls = document.createElement('div');
     //             quantityControls.className = 'quantity-controls';
     //             quantityControls.innerHTML = `
@@ -369,13 +385,18 @@ document.addEventListener('DOMContentLoaded', function() {
     //                     <input type="number" value="1" min="1" class="quantity" data-product="${productName}">
     //                     <button class="quantity-btn plus">+</button>
     //                 </div>
+    //                 <div class="presentation-options">
+    //                     <button class="presentation-btn" data-presentation="Lata">Lata</button>
+    //                     <button class="presentation-btn" data-presentation="Botella">Botella</button>
+    //                     <button class="presentation-btn" data-presentation="Barril">Barril</button>
+    //                 </div>
     //                 <button class="add-to-cart-btn" data-product="${productName}" data-price="12000">Añadir al carrito</button>
-    //             `;
+    //             `; 
                 
-    //             // Añadir los controles al final del artículo
+    // //             // Añadir los controles al final del artículo
     //             article.appendChild(quantityControls);
                 
-    //             // Configurar eventos para los botones de cantidad
+    // //             // Configurar eventos para los botones de cantidad
     //             const minusBtn = quantityControls.querySelector('.minus');
     //             const plusBtn = quantityControls.querySelector('.plus');
     //             const quantityInput = quantityControls.querySelector('.quantity');
