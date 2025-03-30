@@ -144,8 +144,7 @@ header img {
     margin-right: auto; 
     height: 100%; 
     align-items: center;
-    padding-left: 20px; /* Espacio a la izquierda del logo */
-    width: 7%; /* Mantiene la proporción del logo */
+    padding-right: 200px; /* Espacio a la izquierda del logo */ 
     object-fit: cover;
 }
 
@@ -230,30 +229,33 @@ nav {
   }
 
 
+  .hamburger-menu {
+    display: none;  
+}
 
 /* Estilos para pantallas más pequeñas hasta 468px */
 @media (max-width: 468px) {
   header {
-      padding: 0 20px; /* Añade un poco de padding horizontal */
-      height: auto; /* Ajusta la altura automáticamente */
+      padding: 0 20px; 
+      height: auto; 
   }
 
   header img {
-      height: 40px; /* Ajusta la altura del logo en móvil */
+      height: 40px; 
   }
 
   /* Oculta la navegación por defecto en móvil */
   .navigation ul {
       display: none;
-      flex-direction: column; /* Muestra los elementos en columna */
-      width: 100%; /* Ocupa todo el ancho */
-      position: absolute; /* Posición absoluta para que se despliegue */
-      top: 100%; /* Empieza justo debajo del header */
+      flex-direction: column; 
+      width: 100%; 
+      position: absolute; 
+      top: 100%; 
       left: 0;
-      background-color: rgba(168, 83, 133,1); /* Fondo para el menú desplegado */
-      text-align: left; /* Alinea el texto a la izquierda */
-      padding: 20px; /* Añade padding al menú desplegado */
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Sombra para el menú */
+      background-color: rgba(168, 83, 133,1); 
+      text-align: left; 
+      padding: 20px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); 
   }
 
   .navigation ul.active {
@@ -2397,13 +2399,14 @@ footer {
   /* css para log  */
 
   /* Estilos para el menú desplegable de perfil */
-.profile-dropdown {
+.perfil {
   position: relative;
   display: inline-block;
 }
 
-.profile-btn {
-  background-color: #4CAF50;
+.perfil-btn {
+  background: none;
+  border: none;
   color: white;
   padding: 10px 15px;
   font-size: 16px;
@@ -2412,29 +2415,29 @@ footer {
   cursor: pointer;
 }
 
-.dropdown-content {
+.perfil-contenido {
   display: none;
   position: absolute;
-  right: 0;
-  background-color: #f9f9f9;
-  min-width: 160px;
+  right: -13px;
+  background-color: #B76FA8;
+  min-width: 163px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border-radius: 4px;
 }
 
-.dropdown-content a {
+.perfil-contenido a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
+.perfil-contenido li{
+  border-left: none;
 }
 
-.profile-dropdown:hover .dropdown-content {
+
+.perfil-contenido:hover .perfil-contenido {
   display: block;
 }
 
@@ -2534,7 +2537,7 @@ footer {
   position: relative;
 }
 
-.close {
+.close, .close-register {
   position: absolute;
   right: 20px;
   top: 10px;
@@ -2678,3 +2681,213 @@ footer {
       flex-direction: column;
     }
   }
+
+
+
+
+
+
+
+  /* Estilos para controles de productos */
+.product-controls {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Selector de presentación */
+.presentation-selector h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.presentation-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.presentation-btn {
+  padding: 8px 15px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.presentation-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.presentation-btn.selected {
+  border-color: #4a7c59;
+  background-color: #4a7c59;
+  color: white;
+}
+
+/* Controles de cantidad */
+.quantity-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quantity-input {
+  display: flex;
+  align-items: center;
+  max-width: 150px;
+}
+
+.quantity-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.quantity-btn.minus {
+  border-radius: 4px 0 0 4px;
+}
+
+.quantity-btn.plus {
+  border-radius: 0 4px 4px 0;
+}
+
+.quantity {
+  width: 50px;
+  height: 36px;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  font-size: 16px;
+}
+
+.add-to-cart-btn {
+  padding: 10px 15px;
+  background-color: #4a7c59;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #3d6749;
+}
+
+/* Estilos para el carrito modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cart-container h1 {
+  margin-top: 0;
+  color: #4a7c59;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.cart-items {
+  margin: 20px 0;
+}
+
+.cart-item {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 80px;
+  align-items: center;
+  gap: 10px;
+}
+
+.remove-item {
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#checkout-btn {
+  background-color: #4a7c59;
+  color: white;
+}
+
+#clear-cart-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .cart-item {
+      grid-template-columns: 1fr;
+      gap: 5px;
+  }
+  
+  .presentation-buttons {
+      flex-direction: column;
+  }
+}
