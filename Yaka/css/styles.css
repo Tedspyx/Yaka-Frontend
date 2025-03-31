@@ -61,6 +61,10 @@ a{
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   width: 220px;
 }
+.accessibility-button, .accessibility-menu {
+  transform: translateZ(0); /* Crear un nuevo contexto de apilamiento */
+  will-change: transform; /* Optimizar rendimiento */
+}
 
 .menu-grid {
   display: flex;
@@ -2033,7 +2037,14 @@ body {
   padding: 40px;
 }
 
-
+#701F5D
+#1A050D
+#A85385
+#D4AF37
+#2E5234
+#BF6F3A
+#000000
+#FFFFFF
 
 /*********************************Contacto*********************************************/
 
@@ -2474,7 +2485,7 @@ footer {
 
 /* Estilos para el botón del carrito */
 .cart-button {
-  background-color: #4CAF50;
+  background-color: #D4AF37;
   color: white;
   padding: 10px 15px;
   border-radius: 4px;
@@ -2525,7 +2536,7 @@ footer {
 .quantity-btn {
   width: 30px;
   height: 30px;
-  background-color: #4CAF50;
+  background-color: #D4AF37;
   color: white;
   border: none;
   border-radius: 4px;
@@ -2537,7 +2548,7 @@ footer {
 }
 
 .add-to-cart-btn {
-  background-color: #4CAF50;
+  background-color: #D4AF37;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -2675,19 +2686,20 @@ footer {
   padding: 8px 15px;
   border: 2px solid #ddd;
   border-radius: 6px;
-  background-color: white;
+  background-color: #701F5D;
+  color: white;
   cursor: pointer;
   transition: all 0.2s ease;
   font-weight: 500;
 }
 
 .presentation-btn:hover {
-  background-color: #f0f0f0;
+  background-color: #701F5D;
 }
 
 .presentation-btn.selected {
-  border-color: #4a7c59;
-  background-color: #4a7c59;
+  border-color: #D4AF37;
+  background-color: #D4AF37;
   color: white;
 }
 
@@ -2708,7 +2720,7 @@ footer {
   width: 36px;
   height: 36px;
   border: 1px solid #ddd;
-  background-color: white;
+  background-color: #D4AF37;
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -2736,7 +2748,7 @@ footer {
 
 .add-to-cart-btn {
   padding: 10px 15px;
-  background-color: #4a7c59;
+  background-color: #701F5D;
   color: white;
   border: none;
   border-radius: 4px;
@@ -2746,7 +2758,7 @@ footer {
 }
 
 .add-to-cart-btn:hover {
-  background-color: #3d6749;
+  background-color: #D4AF37;
 }
 
 /* Estilos para el carrito modal */

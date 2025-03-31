@@ -12,8 +12,9 @@ document.getElementById("smartContrast").addEventListener("click", function() {
 // Agrandar texto
 document.getElementById("increaseText").addEventListener("click", function() {
     document.body.classList.add("large-text");
+    
 });
-
+    
 // Reducir texto
 document.getElementById("decreaseText").addEventListener("click", function() {
     document.body.classList.remove("large-text");
