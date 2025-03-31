@@ -179,5 +179,43 @@
 
     <script src="https://kit.fontawesome.com/74662a5f03.js" crossorigin="anonymous"></script>
     <script src="../dist/accesibilidad.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const API_KEY = "fdb866d49a3e5a3bf2742afcfac4f62e825dc97e"; // Verifica que este sea tu API key válido
+    
+        // Seleccionamos todas las tarjetas de maridaje
+        const cards = document.querySelectorAll(".maridajes-card");
+    
+        cards.forEach(async (card) => {
+          // Obtenemos el título de la tarjeta que se encuentra en la parte "front"
+          const frontElement = card.querySelector(".front");
+          const foodQuery = frontElement.textContent.trim();
+    
+          try {
+            // Asegúrate de incluir "https://"
+            const response = await fetch(
+              `https://api.spoonacular.com/food/wine/pairing?food=${encodeURIComponent(foodQuery)}&apiKey=${API_KEY}`
+            );
+    
+            if (!response.ok) {
+              throw new Error("Error en la respuesta de la API");
+            }
+    
+            const data = await response.json();
+    
+            // Usamos el pairingText de la respuesta; en caso de no tenerlo, mostramos un mensaje por defecto
+            const pairingText = data.pairingText || "No se encontró un maridaje específico.";
+    
+            // Actualizamos el contenido de la parte "back" de la tarjeta
+            const backElement = card.querySelector(".back");
+            backElement.textContent = pairingText;
+          } catch (error) {
+            console.error(`Error al obtener maridaje para "${foodQuery}":`, error);
+          }
+        });
+      });
+    </script>
+    
+    
 </body>
 </html>
