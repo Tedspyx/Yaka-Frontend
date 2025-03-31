@@ -1,0 +1,63 @@
+{
+    "name": "Yaka",
+    "short_name": "Yaka",
+    "description": "Sitio web de cervezas artesanales hechas con frutos del Amazonas",
+    "lang": "es-ES",
+    "start_url": "./",
+    "scope": "./",
+    "theme_color": "#701F5D",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "display_override": ["window-controls-overlay"],
+    "edge_side_panel": {
+        "enabled": true,
+        "preferred_width": 400
+    },
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "./assets/img/logo2_192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "./assets/img/logo2_512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "./assets/img/logo2_256.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "./assets/img/logo2_128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "./assets/img/screenshot-desktop.png",
+            "sizes": "1280x800",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "./assets/img/screenshot-mobile.png",
+            "sizes": "750x1334",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ],
+    "protocol_handlers": [
+        {
+            "protocol": "web+yaka",
+            "url": "./?cmd=%s"
+        }
+    ]
+}

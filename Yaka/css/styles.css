@@ -1906,7 +1906,7 @@ body {
 .card4{
   background-image: url(../assets/img/postrecito_maridale.png);
   background-size: cover;
-  background-position: center;
+  background-position: centemaridajesr;
 }
 
 .card5{
@@ -1927,6 +1927,79 @@ body {
   text-align: center;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
+}
+
+/*********************************** Responsive Maridajes responsividad*********************************************/
+
+@media (max-width: 1024px) {
+  .maridajes-fondo h1 {
+    font-size: 80px;
+  }
+  .container-maridajes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .maridajes-fondo h1 {
+    font-size: 60px;
+  }
+  .container-maridajes {
+    grid-template-columns: repeat(1, 1fr);
+  }
+ 
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .container-maridajes {
+    gap: 15px;
+  }
+  .maridajes-fondo{
+    padding: 223px 100px;
+    background-attachment: scroll;
+  }
+  
+  
+  .maridajes-fondo h1{
+    font-size: 4.5em;
+    top: 45%;
+  }
+
+  .front h1 {
+    font-size: 1.9em;
+}
+
+.back {
+  font-size: 0.9em;
+}
+  
+}
+
+@media (min-width: 375px) and (max-width: 480px) {
+ 
+ 
+  .container-maridajes {
+    gap: 15px;
+  }
+  .maridajes-fondo{
+    padding: 223px 100px;
+    background-attachment: scroll;
+  }
+  
+  
+  .maridajes-fondo h1{
+    font-size: 3.5em;
+    top: 45%;
+  }
+
+  .front h1 {
+    font-size: 1.7em;
+}
+
+.back {
+  font-size: 0.9em;
+}
+  
 }
 
 
@@ -2013,6 +2086,82 @@ body {
   padding: 40px;
 }
 
+/*------------------------------------------------------ Query Sostenibilidad --------------------------------------------------------*/
+
+@media (max-width: 1024px) {
+  .projects-section__project {
+    width: 400px;
+    height: 550px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .projects-section__projects {
+    flex-wrap: wrap; 
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects-section__project {
+    width: 50%;
+    height: auto;
+  }
+
+  .projects-section__project img {
+    height: auto;
+  }
+
+  .card-content {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .projects-section__projects {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects-section__project {
+    width: 90%;
+    height: auto;
+  }
+
+  .projects-section__project img {
+    height: auto;
+  }
+
+  .card-content {
+    height: auto;
+    padding: 15px;
+  }
+  .card-content p {
+    font-size: 0.9em;
+}
+}
+
+@media (min-width: 375px)  and (max-width: 480px) {
+  .sostenibilidad_fondo {
+    height: 45vh;
+  }
+  .projects-section__project {
+    width: 100%;
+    height: auto;
+  }
+  .card-content {
+    padding: 10px;
+  }
+  .sostenibilidad-titulo {
+    font-size: 2.5em;
+}
+.card-content p {
+  text-align: justify;
+  margin: 0;
+  font-size: 0.9em;
+}
+}
 
 
 /*********************************Contacto*********************************************/
@@ -2678,3 +2827,28 @@ footer {
       flex-direction: column;
     }
   }
+
+  @media(min-width:478px) and (max-width:768px){
+    .footer-top{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-middle{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @media(min-width:768px) and (max-width:1024px){
+    .footer-top{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-middle{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+

@@ -8,6 +8,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    
+    <!--Theme de la App -->
+    <meta name="theme-color" content="#701F5D">
+
+    <!--Configuracion de oprimizacion para dispositivos moviles-->
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <!--Meta etiquetas-->
+    <meta name="apple-mobile-web-app-capable" content="yes" > 
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" >
+    <link rel="apple-touch-icon" sizes="192x192" href="./assets/img/logo2_192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="./assets/img/logo2_512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo2_180.png">
+    <link rel="apple-touch-startup-image" href="./assets/img/logo2.png">
+    
+    <!--Enlazar el archivo manifiesto-->
+    <link rel="manifest" href="./manifest.json">
+
+
+
     <title>Inicio</title>
 </head>
 <body>
@@ -577,13 +598,13 @@ c0,0,0-3.9,0-8.3L1007.3,59.5z"></path>
       <div class="footer-col">
         <h2>Yaká <span>Cerveza Artesanal</span></h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+          No te pierdas nuestros execelentes sabores
         </p>
         <h4>Follow us</h4>
         <div class="social-links">
-          <a href="#"><i class="fa-brands fa-facebook-f fa-lg" style="color: #fff;"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram fa-lg" style="color: #fff;"></i></a>
-          <a href="#"><i class="fa-brands fa-x-twitter fa-lg" style="color: #fff;"></i></a>
+          <a href="https://www.facebook.com/yaka.beer.2025?rdid=axpvRWmDX8aN9qXh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1FCzMGaoLH%2F#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f fa-lg" style="color: #fff;"></i></a>
+          <a href="https://www.instagram.com/yaka_beer/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram fa-lg" style="color: #fff;"></i></a>
+          <a href="https://x.com/beer_yaka" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter fa-lg" style="color: #fff;"></i></a>
         </div>
       </div>
   
@@ -624,5 +645,6 @@ c0,0,0-3.9,0-8.3L1007.3,59.5z"></path>
     <script src="./dist/SPA.js"></script>
     <script src="./dist/verificacionEdad.js"></script>
     <script src="./dist/accesibilidad.js"></script>
+    <script src="./worker.js"></script>
 </body>
 </html>
