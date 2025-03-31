@@ -265,7 +265,6 @@ document.addEventListener('DOMContentLoaded', function () {
           } else {
             let ordenesHTML = '';
             ordenes.forEach(orden => {
-              // Se incluye el id del carrito como data attribute para conservar la asociación
               ordenesHTML += `
                 <div class="order-item" data-carritoid="${orden.carrito ? orden.carrito.id : ''}">
                   <p><strong>ID:</strong> ${orden.id}</p>
@@ -279,24 +278,20 @@ document.addEventListener('DOMContentLoaded', function () {
               `;
             });
             ordersContainer.innerHTML = ordenesHTML;
-            // Evento para eliminar cada orden
             document.querySelectorAll('.delete-order').forEach(button => {
               button.addEventListener('click', function () {
                 const orderId = this.getAttribute('data-orderid');
                 deleteOrder(orderId);
               });
             });
-            // Evento para editar cada orden
             document.querySelectorAll('.edit-order').forEach(button => {
               button.addEventListener('click', function () {
                 const orderId = this.getAttribute('data-orderid');
                 const orderDiv = this.parentElement;
-                // Extraer datos actuales de la orden
                 const currentFecha = orderDiv.querySelector('p:nth-child(2)').textContent.replace("Fecha:", "").trim();
                 const currentDireccion = orderDiv.querySelector('p:nth-child(4)').textContent.replace("Dirección:", "").trim();
                 const currentTotalText = orderDiv.querySelector('p:nth-child(5)').textContent.replace("Total:", "").replace("$", "").trim();
                 const currentTotal = parseFloat(currentTotalText);
-                // Obtener el id del carrito guardado como atributo
                 const carritoId = orderDiv.getAttribute('data-carritoid');
                 const newDireccion = prompt("Ingrese la nueva dirección de envío:", currentDireccion);
                 const newFecha = prompt("Ingrese la nueva fecha de entrega (YYYY-MM-DD):", currentFecha);
@@ -304,9 +299,9 @@ document.addEventListener('DOMContentLoaded', function () {
                   const updatedOrder = {
                     direccionEnvio: newDireccion,
                     fechaOrden: newFecha,
-                    estado: "Pendiente", // o el estado que corresponda
+                    estado: "Pendiente",
                     total: currentTotal || 0,
-                    carrito: { id: carritoId }  // se conserva la asociación con el carrito
+                    carrito: { id: carritoId }
                   };
                   fetch(`http://localhost:8080/ordenes/updateOrdenes/${orderId}`, {
                     method: 'PUT',
@@ -319,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     })
                     .then(data => {
                       alert("Orden actualizada");
-                      modalPedidos(); // refrescar la vista de órdenes
+                      modalPedidos();
                     })
                     .catch(err => alert("Error: " + err.message));
                 }
@@ -564,6 +559,69 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(error => console.error(error));
   }
 
+  // Función para enviar el carrito a la orden
+  function enviarCarritoAOrden(direccionEnvio, fechaEntrega) {
+    const dataUser = JSON.parse(sessionStorage.getItem('dataUser'));
+    if (!dataUser) {
+      alert('Debes iniciar sesión para finalizar la compra');
+      return;
+    }
+    const usuarioId = dataUser.id;
+    // Obtener el carrito del usuario
+    fetch('http://localhost:8080/carrito/getCarrito', { method: 'GET' })
+      .then(response => {
+        if (!response.ok) throw new Error('Error al obtener el carrito');
+        return response.json();
+      })
+      .then(carritos => {
+        const userCarrito = carritos.filter(item => item && item.usuario && item.usuario.id === usuarioId);
+        if (userCarrito.length === 0) {
+          alert('Tu carrito está vacío');
+          return;
+        }
+        // Calcular total de la orden
+        const total = userCarrito.reduce((acc, item) => {
+          return acc + ((item.presentacione.precio || 0) * item.cantidad);
+        }, 0);
+
+        // Construir la orden
+        // Ajusta la estructura de la orden según lo que tu backend espera
+        const orden = {
+          direccionEnvio: direccionEnvio,
+          fechaOrden: fechaEntrega,
+          estado: "Pendiente",
+          total: total,
+          carrito: { id: userCarrito[0].id } // Ejemplo: se asocia el carrito con el ID del primer ítem
+        };
+
+        // Enviar la orden al endpoint
+        fetch('http://localhost:8080/ordenes/addOrdenes', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(orden)
+        })
+          .then(response => {
+            if (!response.ok) throw new Error('Error al crear la orden');
+            return response.json();
+          })
+          .then(data => {
+            alert('Orden creada correctamente');
+            // Vaciar el carrito eliminando cada ítem
+            const deletePromises = userCarrito.map(item => {
+              return fetch(`http://localhost:8080/carrito/deleteCarrito/${item.id}`, { method: 'DELETE' });
+            });
+            Promise.all(deletePromises)
+              .then(() => {
+                updateCartCount();
+                // Opcional: aquí puedes redirigir o actualizar la UI
+              })
+              .catch(err => alert('Error al vaciar el carrito: ' + err.message));
+          })
+          .catch(err => alert('Error: ' + err.message));
+      })
+      .catch(err => alert('Error al obtener el carrito: ' + err.message));
+  }
+
   // Función para mostrar el modal del carrito con opciones de editar y confirmar orden
   function showCartModal(e) {
     if (e) e.preventDefault();
@@ -587,7 +645,7 @@ document.addEventListener('DOMContentLoaded', function () {
           cartModal.className = 'modal';
           document.body.appendChild(cartModal);
         }
-        const total = cartItems.reduce((sum, item) => sum + (item.presentacione.precio * item.cantidad || 0), 0);
+        const total = cartItems.reduce((sum, item) => sum + ((item.presentacione.precio || 0) * item.cantidad), 0);
         cartModal.innerHTML = `
           <div class="modal-content">
             <span class="close">&times;</span>
@@ -648,44 +706,40 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         
         // Botón "Editar" para ítems del carrito
-document.querySelectorAll('.edit-item').forEach(button => {
-  button.addEventListener('click', function () {
-    const cartItemId = this.getAttribute('data-itemid');
-    // Obtén el id del producto (cerveza) del contenedor del item
-    const productId = this.parentElement.getAttribute('data-productid');
-    const newQuantity = prompt("Ingrese la nueva cantidad", "1");
-    const newPresentation = prompt("Ingrese la nueva presentación (Lata, Botella, Barril)", "Lata");
-    if (newQuantity && newPresentation) {
-      const updatedItem = {
-        // Incluimos el id del carrito para que la API sepa qué registro actualizar
-        id: parseInt(cartItemId),
-        cantidad: parseInt(newQuantity),
-        // Usamos el id obtenido del atributo, no el cartItemId
-        cerveza: { id: parseInt(productId) },
-        presentacione: { id: mapearPresentacionId(newPresentation) },
-        usuario: { id: dataUser.id } // Asumiendo que dataUser está definido en el scope
-      };
-      fetch(`http://localhost:8080/carrito/updateCarrito/${cartItemId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedItem)
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error("Error al actualizar el carrito");
-          }
-          return response.json();
-        })
-        .then(data => {
-          alert("Carrito actualizado");
-          showCartModal();
-        })
-        .catch(err => alert("Error: " + err.message));
-    }
-  });
-});
+        document.querySelectorAll('.edit-item').forEach(button => {
+          button.addEventListener('click', function () {
+            const itemId = this.getAttribute('data-itemid');
+            const newQuantity = prompt("Ingrese la nueva cantidad", "1");
+            const newPresentation = prompt("Ingrese la nueva presentación (Lata, Botella, Barril)", "Lata");
+            if(newQuantity && newPresentation) {
+              const updatedItem = {
+                cantidad: parseInt(newQuantity),
+                // Nota: ajusta este objeto según la estructura que espera tu API
+                cerveza: { id: parseInt(itemId) },
+                presentacione: { id: mapearPresentacionId(newPresentation) },
+                usuario: { id: dataUser.id }
+              };
+              fetch(`http://localhost:8080/carrito/updateCarrito/${itemId}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updatedItem)
+              })
+                .then(response => {
+                  if (!response.ok) {
+                    throw new Error("Error al actualizar el carrito");
+                  }
+                  return response.json();
+                })
+                .then(data => {
+                  alert("Carrito actualizado");
+                  showCartModal();
+                })
+                .catch(err => alert("Error: " + err.message));
+            }
+          });
+        });
         
-        // Botón "Vaciar Carrito" (opcional)
+        // Botón "Vaciar Carrito"
         const clearCartBtn = document.getElementById('clear-cart-btn');
         if (clearCartBtn) {
           clearCartBtn.addEventListener('click', function () {
@@ -708,7 +762,7 @@ document.querySelectorAll('.edit-item').forEach(button => {
           });
         }
         
-        // Botón "Finalizar Compra": se muestra prompt, se confirma la orden y se cierra el modal
+        // Botón "Finalizar Compra": abrir prompt para datos de envío y luego enviar la orden
         const checkoutBtn = document.getElementById('checkout-btn');
         if (checkoutBtn) {
           checkoutBtn.addEventListener('click', function () {
@@ -745,9 +799,11 @@ document.querySelectorAll('.edit-item').forEach(button => {
                 alert('Debes ingresar una dirección de envío y una fecha de entrega');
                 return;
               }
-              alert('Orden confirmada');
+              // Llamar a la función para enviar el carrito a la orden
+              enviarCarritoAOrden(direccionEnvio, fechaInput);
               document.body.removeChild(fechaPrompt);
-              cartModal.style.display = 'none';
+              const cartModal = document.getElementById('cart-modal');
+              if (cartModal) cartModal.style.display = 'none';
             });
           });
         }
